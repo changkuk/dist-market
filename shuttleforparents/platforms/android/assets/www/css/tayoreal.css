@@ -1,0 +1,464 @@
+body {
+    font-size:100%;
+    /*em 계산법 : body font 100% = 16px = 1em로 놓고 계산. 해상도 큰것에만 조금 더 주면 되겠다.*/
+}
+/*상단------------------------------*/
+div.tab {
+    overflow: hidden;
+    width: 100%;
+    height:12.6%;
+    background-color: #5473ff;
+}
+p.tabtitle {
+    font-family: AppleSDGothicNeo;
+    line-height: 1.28;
+    font-size:1.125em;
+    text-align: center;
+    color: #ffffff;
+    width:100%;
+    margin:auto;
+    margin-top:1.25em;
+}
+p.tabbuttons {
+    text-align:center;
+    margin:auto;
+/*    margin-bottom:5%;*/
+    margin-top:1.6875em;
+    margin-bottom:1.6875em;
+}
+img.bus_buttons {
+    /* 버튼3개일때
+     width:147px;
+     height:57px;
+     */
+    width:7.6875em;
+    height:2.375em;
+    
+}
+
+#skipbtn {/*버튼 2개일때*/
+    margin-right:2.7%;
+}
+/*운행이 종료되었습니다. 전체화면 ------------------------------*/
+div.endroute {
+    display:none;
+    width: 45%;
+    height:45%;
+    font-family: AppleSDGothicNeo;
+    font-size:1.125em;/*36px*/
+    line-height: 1.5;
+    text-align: center;
+    color: #cccccc;
+    margin:auto;
+    margin-top:20%;
+}
+img.endrouteimg {
+    display:block;
+    margin:auto;
+    align:center;
+    width:3.75em;
+    height:3.75em;
+}
+/*움직이는 버스 ------------------------*/
+.movingdiv {
+    display:none;
+    position: relative;
+    margin:0;
+    margin-left: 0.28125em;
+    padding:0;
+}
+.boximg {
+    /*    width:86px;*/
+    /*    height:40px;*/
+    width:2.6875em;
+    height:1.25em;
+}
+.text_in_box_div {
+    position:absolute;
+    bottom:0.7em;/*5px;*/
+    left: 0.4375em;/*2px*/
+    font-size:0.6875em;
+/*    padding-left:0.4375em;*/
+/*    padding-bottom:0.1563em;*/
+}
+.fixedBus {
+    /*width:88px;*/
+    /*height:86px;*/
+    width:2.75em;
+    height:2.6875em;
+}
+/*본문 ------------------------------*/
+div.route {
+    width:100%;
+    height:66.4%;
+    overflow:hidden;
+    border-collapse:collapse;
+    margin-top: 1.375em;/*10%;*/
+    margin-bottom:0.625em;/*10%;*/
+}
+
+table {
+    width:100%;
+    height:66.4%;
+    margin:0;
+    padding:0;
+    font-family: AppleSDGothicNeo;
+    color:#333333;
+    border-collapse: collapse;
+}
+td {
+    font-size:0.8em;
+}
+table, tr, td, div.route img {
+    margin:0 auto;
+    padding:0;
+}
+.righttd {
+/*    padding-left:0.28125em;*/
+}
+.lefttd {
+    width:6.25em;
+    padding:0;
+    padding-left:2.75em;
+}
+
+div.route p, div.route img {
+    margin:0 auto;
+    padding:0;
+}
+td.img_td img {
+    display:block;
+}
+
+td.locationtd {
+/*    white-space:nowrap;*/
+/*    overflow-x: scroll;*/
+}
+p.flexible_line {
+/*    height:110px;*/
+/*    height:2.5625em;*/
+}
+p.bus_line1, p.flexible_line {
+    background-image: url("../img/dimdotline.png");
+    background-repeat: repeat-y;
+    background-position:center;
+    width:0.1875em;
+}
+p.bus_line2, p.bus_line3 {
+    background-image: url("../img/dimbusline.png");
+    background-repeat: repeat-y;
+    background-position:center;
+    width:0.4375em;
+}
+p.bus_line1, p.bus_line2, p.bus_line3,p.flexible_line {
+    height:3.6562em;
+}
+/*    p.bus_line1 {*/
+/*        height:108px;*/
+/*    }*/
+/*    p.bus_line2 {*/
+/*        height:108px;*/
+/*    }*/
+/*    p.bus_line3 {*/
+/*        height:110px;*/
+/*    }*/
+
+td#flexibletd {
+/*    padding-top:56px;*/
+/*    height:2.5625em;*/
+height:1.875em;
+/*padding-top:1.875em;*/
+}
+td#paddingtd {
+/*    padding-top:54px;*/
+/*height:1.875em;*/
+/*padding-top:1.875em;*/
+}
+td#paddingtd.righttd {
+    height:1.875em;
+}
+img.bus_img {
+    width:2.75em;
+    height:2.6875em;
+}
+
+tr:nth-child(2) td:nth-child(even) {
+    border-bottom: solid 0.0625em #ebebeb;
+}
+tr:nth-child(5) td:nth-child(even) {
+    border-bottom: solid 0.0625em #ebebeb;
+}
+tr:nth-child(8) td:nth-child(even) {
+    border-bottom: solid 0.0625em #ebebeb;
+}
+tr:nth-child(11) td:nth-child(even) {
+    border-bottom: solid 0.0625em #ebebeb;
+}
+
+p.getontime {
+    color:#f66b5c;
+}
+
+img.leave_img, img.arrive_img {
+    width:2.8125em;
+    height:1.4375em;
+}
+img.busstop_img1, img.busstop_img2 {
+    width:1em;
+    height:1em;
+}
+
+/* 아이 아이콘 ------------------------------*/
+div.navibar {
+    overflow: hidden;
+    position: fixed;
+    bottom:4.875em;/*(156px/2/16px) when mhdi, body font-size:16px */
+    right:1.5625em;/*(50px/2/16px) when mhdi, body font-size:16px */
+}
+button.sidbtn {
+    display:block;
+    border-radius: 50%;
+/*    border: solid 2px #ededed;*/
+    border: 0;
+    background-color: #f66b5c;
+/*    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);*/
+
+    font-family: AppleSDGothicNeo;
+    font-weight: bold;
+    text-align: center;
+    line-height:2;
+    color: #ffffff;
+    margin:0;
+    padding:0;
+    font-size:0.6875em;/*22/2/16*/
+    width:4.6875em;/*150/2/16*/
+    height:4.6875em;
+}
+img.sidbtn {
+    display:block;
+    margin:auto;
+    width:1.8125em;/*58/2/16*/
+    height:1.8125em;
+}
+/*하원 안타기 유도 ---------------------------*/
+.pinModal {
+    display:none;
+    position:fixed;
+    z-index:1;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.4);
+    padding-top:12.5em; /*400/2/16 : 상단부터 첫번째 테이블 첫번째 row 까지 400px */
+}
+
+.modalheader {
+    height:2em;
+}
+.modalfooter {
+    bottom:0;
+    margin-bottom:0;
+}
+.modalContent {
+    position:relative;
+    background-color:#fefefe;
+    margin:auto;
+    padding:0;
+    border:1px solid #ededed;
+    width:80%;
+    height:20%;
+    font-size:1em;
+    color:#000;
+    text-align:center;
+}
+.closeSpan {
+    display:block;
+    color:darkgray;
+    float:right;
+    padding-right:2%;
+    font-size:2em;
+    margin-bottom:3%;
+    padding-bottom:3%;
+    font-weight:bold;
+}
+.closeSpan:hover,.closeSpan:focus {
+    color: #000;
+    text-decoration: none;
+}
+.comfirmBtn {
+    width: 100%;
+    background-color: #ededed;
+    border: 0;
+    margin:0;
+    padding-top: 3%;
+    padding-bottom:3%;
+    font-family: AppleSDGothicNeo;
+    font-size:1.3em;
+    font-weight: bold;
+    color: #cccccc;
+}
+.comfirmBtn:hover,.comfirmBtn:focus {
+    border: 0;
+    outline:none;
+}
+/* device별 적용------------------------------------
+ 1.5x hdpi
+ */
+@media screen and (max-width:767px) {
+/*    .lefttd {*/
+/*        width:202.5px;/*left + boximg.width + fixedbus.width*/*/
+/*    }*/
+
+/*    img.endrouteimg {*/
+/*        width:90px;*/
+/*        height:90px;*/
+/*    }*/
+/*    img.leave_img, img.arrive_img {*/
+/*        width:67.5px;*/
+/*        height:34.5px;*/
+/*    }*/
+/*    img.busstop_img1, img.busstop_img2 {
+        width:24px;
+        height:24px;
+    }*/
+/*    img.bus_img {*/
+/*        width:66px;*/
+/*        height:64.5px;*/
+/*    }*/
+/*    p.bus_line1, p.bus_line2, p.bus_line3, p.bus_line4 {*/
+/*        width:10.5px;*/
+/*    }*/
+
+/*    td.bordertd {*/
+/*        border-bottom: solid 1.5px #ebebeb;*/
+/*    }*/
+
+/* 출발전 일때  ------------------------------*/
+/*    td#paddingtd {*/
+/*        padding-top:40.5px;*/
+/*    }*/
+/*    td#flexibletd {*/
+/*        padding-top:42px;*/
+/*    }*/
+/*    p.bus_line1 {*/
+/*        height:81px;*/
+/*    }*/
+/*    p.bus_line2 {*/
+/*        height:81px;*/
+/*    }*/
+/*    p.bus_line3 {*/
+/*        height:82.5px;*/
+/*    }*/
+}
+/* ---- 3
+ mdpi 1x
+ */
+@media screen and (max-width : 479px) {
+/*    .lefttd {*/
+/*        width:135px;/*left + boximg.width + fixedbus.width*/*/
+/*    }*/
+
+/*    img.endrouteimg {*/
+/*        width:60px;*/
+/*        height:60px;*/
+/*    }*/
+
+    
+/*    img.leave_img, img.arrive_img {*/
+/*        width:45px;*/
+/*        height:23px;*/
+/*    }*/
+/*    img.busstop_img1, img.busstop_img2 {
+        width:16px;
+        height:16px;
+    }*/
+/*    img.bus_img {*/
+/*        /*bus image*/
+/*/*        width:44px;*/
+/*/*        height:43px;*/
+/*/*아이승차 image*/
+/*width:45px;*/
+/*height:52px;*/
+/*    }*/
+/*    p.bus_line1, p.bus_line2, p.bus_line3, p.bus_line4 {*/
+/*        width:7px;*/
+/*    }*/
+
+
+/*    td.bordertd {*/
+/*        border-bottom: solid 1px #ebebeb;*/
+/*    }*/
+
+/* 출발전 일때  ------------------------------*/
+/*    td#paddingtd {*/
+/*        padding-top:27px;*/
+/*    }*/
+/*    td#flexibletd {*/
+/*        padding-top:28px;*/
+/*    }*/
+/*    p.bus_line1 {*/
+/*        height:54px;*/
+/*    }*/
+/*    p.bus_line2 {*/
+/*        height:54px;*/
+/*    }*/
+/*    p.bus_line3 {*/
+/*        height:55px;*/
+/*    }*/
+}
+/* ----  1 ipad 안드로이드, 아이폰은 따로 가야겠다. 글씨만 3x 로 가고 있으니까. 어떻게??? 
+ xhdpi 2x = ios @2x, xxhdpi = ios @3x
+ */
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+/*    .lefttd {*/
+/*        width:270px;/*left + boximg.width + fixedbus.width*/*/
+/*    }*/
+
+/*    img.endrouteimg {*/
+/*        width:120px;*/
+/*        height:120px;*/
+/*    }*/
+
+/*    img.leave_img, img.arrive_img {*/
+/*        width:90px;*/
+/*        height:46px;*/
+/*    }*/
+/*    img.busstop_img1, img.busstop_img2 {
+        width:32px;
+        height:32px;
+    }*/
+/*    img.bus_img {*/
+/*        width:88px;*/
+/*        height:86px;*/
+/*    }*/
+/*    p.bus_line1, p.bus_line2, p.bus_line3, p.bus_line4 {*/
+/*        width:14px;*/
+/*    }*/
+
+/*    td {/* work-break:break-all 자동줄바꿈..?*/*/
+/*        /*font-size:34px;*/*/
+/*        font-size:2em;*/
+/*    }*/
+/*    td.bordertd {*/
+/*        border-bottom: solid 2px #ebebeb;*/
+/*    }*/
+
+/* 출발전 일때  ------------------------------*/
+/*    td#paddingtd {*/
+/*        padding-top:54px;*/
+/*    }*/
+/*    td#flexibletd {*/
+/*        padding-top:56px;*/
+/*    }*/
+/*    p.bus_line1 {*/
+/*        height:108px;*/
+/*    }*/
+/*    p.bus_line2 {*/
+/*        height:108px;*/
+/*    }*/
+/*    p.bus_line3 {*/
+/*        height:110px;*/
+/*    }*/
+}

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "383793938645",
+    "firebase_url": "https://shuttle4parent.firebaseio.com",
+    "project_id": "shuttle4parent",
+    "storage_bucket": "shuttle4parent.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:383793938645:android:33fe3a04f15c1213",
+        "android_client_info": {
+          "package_name": "com.edticket.shuttleforparents"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "383793938645-ama81ga5gf2ttafibpvilmo06hmhvas6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8xa-VZ7ie6y3x2fuwyQs6wfxsWhk9KxA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

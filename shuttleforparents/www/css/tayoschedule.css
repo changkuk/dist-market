@@ -1,0 +1,431 @@
+body {
+    font-size:100%;
+    /*em 계산법 : body font 100% = 16px = 1em로 놓고 계산. 해상도 큰것에만 조금 더 주면 되겠다.*/
+}
+div.navibar {
+    overflow: hidden;
+    position: fixed;
+/*    bottom: 0;*/
+/*    right:0;*/
+/* ver.2 : 여백 */
+    bottom:1.4375em;/*(46px/2/16px) when mhdi, body font-size:16px */
+    right:1.5625em;/*, 50/2/16*/
+
+}
+button.sidbtn {
+    display:block;
+    border-radius: 50%;
+/*    border: solid 2px #ededed;*/
+    border: 0;
+    outline:none;
+    background-color: #f66b5c;
+/*    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);*/
+
+    font-family: AppleSDGothicNeo;
+    font-weight: bold;
+    text-align: center;
+    line-height:2;
+    color: #ffffff;
+    margin:0;
+    padding:0;
+    z-index:1;
+    font-size:0.6875em;/*22/2/16*/
+    width:4.6875em;/*150/2/16*/
+    height:4.6875em;
+}
+img.sidbtn {
+    display:block;
+    margin:auto;
+    width:1.8125em;/*58/2/16*/
+    height:1.8125em;
+}
+div.container {
+    display:none;
+}
+div.noschedule {
+    width: 45%;
+    height:45%;
+    display:block;/*default hidden*/
+    font-family: AppleSDGothicNeo;
+/*    font-size: 40px;*/
+    font-size:1.25em;
+    line-height: 1.3;
+    text-align: center;
+    color: #cccccc;
+    margin:auto;
+    margin-top:40%;
+}
+img.noscheduleimg {
+    display:block;
+    margin:auto;
+    align:center;
+}
+img.noscheduleimg {
+    width:3.6875em;
+    height:3.625em;
+}
+
+div.tab {
+    overflow: hidden;
+    width: 100%;
+    height:12.6%;
+    background-color: #5473ff;
+}
+.tablink {
+    background-color: #5473ff;
+    width: 15.555%;
+    height:12.6%;
+    outline:none;
+    border:none;
+    padding:0;
+}
+p.day {
+    font-family: AppleSDGothicNeo;
+    text-align: center;
+    font-size:1.3em;
+    color: #ffffff;
+    line-height:1.5;
+    margin:0;
+    margin-top:22.4%;
+}
+p.date {
+    font-family: SFUIText;
+    text-align: center;
+    font-size:0.95em;
+    color: #6695ff;
+    line-height:1;
+    margin:0;
+    margin-bottom:19.7%;
+}
+div.comment {
+    width:100%;
+    height:2.5em;
+    line-height:2.5em;
+    margin-top:1.7%;
+    font-family: AppleSDGothicNeo;
+    text-align: left;
+    font-size:0.875em;
+    vertical-align:middle;
+    color: #ff4444;
+    background-color: #ffe7e7;
+}
+img.noti {
+    width: 4.5%;
+    height: 42.5%;
+    margin-top:0.71875em;
+    margin-bottom:0.71875em;
+    margin-right:0.3125em;
+    margin-left:0.9375em;
+    padding:0;
+}
+table, tr, td {
+    border-collapse: collapse;
+    margin:0;
+    padding:0;
+}
+div.academies {
+    min-width:92%;
+    margin-left:0.9375em;
+    margin-right:0.9375em;
+    margin-top:0.625em;
+    background-color: #fafafa;
+    border: 0.0625em solid #ededed;
+    border-radius: 0.5em;
+    border-collapse: collapse;
+}
+table.academy {
+    width:100%;
+    border-radius: 0.5em;
+    background-color: #ffffff;
+    margin:0;
+}
+table.schedules {
+    /*min-width:92%;*/
+    width:92%;
+    margin-top:2px;/*parent 의 tr 의 border 를 표현하기 위해*/
+    margin-left:0.9375em;
+    margin-right:0.9375em;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    vertical-align:middle;
+    line-height:1;
+}
+tr.aName {
+    border-bottom: solid 0.0625em #ededed;
+}
+td.aName {
+    font-size:1.0625em;
+    font-family: AppleSDGothicNeo;
+    font-weight: bold;
+    text-align: left;
+    color: #333333;
+    padding-left:1.25em;
+    padding-top:0.8125em;
+    padding-bottom:0.75em;
+}
+table.schedules tr:nth-child(even), tr:nth-child(odd) {
+    border-bottom: solid 0.0625em #ededed;
+}
+table.schedules tr:nth-last-child(1) {
+    border-bottom: 0;
+}
+
+td.img_td {
+    text-align:center;
+    vertical-align:center;
+    font-family: AppleSDGothicNeo;
+    font-size:0.8125em;
+    line-height:1.5;
+    font-weight: bold;
+    text-align: center;
+    color: #6584fb;
+    width:2.625em;
+    height:2.625em;
+}
+img.bus_img {
+    display:block;
+    width:2.625em;
+    height:2.625em;
+}
+td.time_td {
+    width:14.1%;
+}
+p.time {
+    font-family: SFUIText;
+    font-weight: 600;
+    text-align: center;
+    font-size:1.0625em;
+    color: #333333;
+    margin:0;
+    border:0;
+    margin-left:0.6em;
+    margin-right:0.8em;
+}
+/*td.addr_td {*/
+p.addr {
+    text-align:left;
+    font-size:0.9375em;
+    line-height:0.9375;
+    margin:0;
+    border:0;
+    padding:0;
+    font-family: AppleSDGothicNeo;
+    color: #666666;
+    margin-bottom:10.1%;
+    margin-top:4.5%;
+}
+p.busid {
+    text-align:left;
+    font-size:0.9375em;
+    line-height:0.9375;
+    margin:0;
+    border:0;
+    padding:0;
+    margin-top:10.1%;
+    margin-bottom:4.5%;
+}
+img.live_img {
+    margin-left:0.34375em;/*2.5%;*/
+    vertical-align:text-top;
+    width:2.1875em;
+    height:1em;
+}
+img.arrow_img {
+    width:0.5125em;
+    height:0.9375em;
+}
+
+td.goreal_td {/*rd*/
+    text-align:right;
+}
+p.busid {
+    font-family: AppleSDGothicNeo;
+    color: #6584fb;
+    font-size:0.9375em;
+    font-weight: bold;
+/*    width:45%;*/
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+div.modal {
+    position:fixed;
+    width:100%;
+    height:100%;
+    padding:0;
+    margin:0;
+}
+img.modal1, img.modal2 {
+    width:100%;
+    height:100%;
+    padding:0;
+    margin:0;
+}
+/*pin 번호 400에러 처리*/
+.pinModal {
+    display:none;
+    position:fixed;
+    z-index:1;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.4);
+    padding-top:12.5em; /*400/2/16 : 상단부터 첫번째 테이블 첫번째 row 까지 400px */
+}
+.modalContent {
+    position:relative;
+    background-color:#fefefe;
+    margin:auto;
+    padding:0;
+    border:0.0625em solid #ededed;
+    border-radius: 2%;
+    width:80%;
+    height:20%;
+    font-size:1em;
+    color:#000;
+    text-align:center;
+    padding-top:5%;
+    padding-bottom:3%;
+}
+.modalContent table,.modalContent tr,.modalContent td {
+    border:0;
+    border-collapse: collapse;
+}
+/*.closeSpan {*/
+/*    color:darkgray;*/
+/*    float:right;*/
+/*    padding-right:2%;*/
+/*    font-size:1.75em;*/
+/*    font-weight:bold;*/
+/*}*/
+/*.closeSpan:hover,.closeSpan:focus {*/
+/*    color: #000;*/
+/*    text-decoration: none;*/
+/*}*/
+.comfirmBtn {
+    width: 3em;
+    height:2em;
+    background-color: #ededed;
+    border: 0;
+    padding-top: 4%;
+    padding-bottom:3%;
+    margin-bottom:0;
+    font-family: AppleSDGothicNeo;
+    font-size:1.3em;
+    font-weight: bold;
+    color: #cccccc;
+    border-radius:5%;
+}
+.comfirmBtn:hover,.comfirmBtn:focus {
+    border: 0;
+    outline:none;
+}
+
+/* 푸쉬용 */
+/*padding-top:12.5em;  400/2/16 : 상단부터 첫번째 테이블 첫번째 row 까지 400px */
+/*
+.pushModal {
+    display:block;
+    position:fixed;
+    z-index:1;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.4);
+    padding-top:12.5em;
+}
+.pushContent {
+    position:relative;
+    background-color:#fefefe;
+    margin:auto;
+    padding:0;
+    border:0.0625em solid #ededed;
+    width:80%;
+    height:20%;
+    font-size:1em;
+    color:#000;
+    text-align:center;
+    padding-top:5%;
+    padding-bottom:4%;
+}
+
+.Btn {
+    display:inline;
+    width: 40%;
+    background-color: #ededed;
+    border: 0;
+    padding-top: 3%;
+    padding-bottom:3%;
+    font-family: AppleSDGothicNeo;
+    font-size:1.3em;
+    font-weight: bold;
+    color: #cccccc;
+}
+.Btn:hover,.Btn:focus {
+    border: 0;
+    outline:none;
+}
+*/
+/* 프로그레스 모달 */
+.progressModal {
+    display:none;
+    position:fixed;
+    z-index:1;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    padding-top:10em; /*400/2/16 : 상단부터 첫번째 테이블 첫번째 row 까지 400px */
+}
+.progressContent {
+    position:relative;
+    margin:auto;
+    padding:0;
+    width:80%;
+    height:40%;
+    font-size:1em;
+    padding-top:5%;
+    background-color:rgba(0,0,0,0.4);
+    border-radius: 2%;
+    
+    font-family: AppleSDGothicNeo;
+    text-align: center;
+    color: #cccccc;
+}
+div.loadingimg{
+    position:absolute;
+/*    width:1.5625em;*/
+/*    height:1.5625em;*/
+    width:50px;
+    height:50px;
+}
+.loadingimg {
+/*    width:1.5625em;*/
+/*    height:1.5625em;*/
+    width:50px;
+    height:50px;
+}
+
+/* 1.5x device별 적용. 적용순서가 중요*/
+@media screen and (max-width:767px) {
+}
+/* 1x */
+@media screen and (max-width : 479px) {
+}
+/* 3x ipad 안드로이드, 아이폰은 따로 가야겠다. 글씨만 3x 로 가고 있으니까. 어떻게??? */
+@media screen and (min-width:768px) and (max-width:1024px) {
+}

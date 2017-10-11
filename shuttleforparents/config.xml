@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.edticket.shuttleforparents" ios-CFBundleVersion="1.0.3" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>shuttleforparents</name>
+    <description>
+        안전한 어린이통학 전문 서비스 셔틀타요에서 만든 학부모용 '셔틀타요 어플리케이션'입니다.
+    </description>
+    <author email="developer@edticket.com" href="http://tayotayo.net">
+        Edticket.Co.Ltd.,
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <preference name="Orientation" value="portrait" />
+    <platform name="android">
+        <name>셔틀타요</name>
+        <allow-intent href="market:*" />
+        <icon density="ldpi" src="res/icon/android/icon_ldpi_18.png" />
+        <icon density="ldpi" src="res/icon/android/Icon-ldpi.png" />
+        <icon density="mdpi" src="res/icon/android/Icon-mdpi.png" />
+        <icon density="hdpi" src="res/icon/android/Icon-hdpi.png" />
+        <icon density="xhdpi" src="res/icon/android/Icon-xhdpi.png" />
+        <icon density="xxhdpi" src="res/icon/android/Icon-xxhdpi.png" />
+        <icon density="xxxhdpi" src="res/icon/android/Icon-xxxhdpi.png" />
+        <splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png" />
+        <splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png" />
+        <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png" />
+        <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png" />
+        <splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.png" />
+        <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+        <preference name="StatusBarOverlaysWebView" value="false" />
+        <preference name="StatusBarBackgroundColor" value="#000000" />
+        <preference name="StatusBarStyle" value="lightcontent" />
+        <preference name="ios-statusbarstyle" value="black-opaque" />
+        <preference name="target-device" value="handset" />
+        <preference name="deployment-target" value="7.0" />
+        <icon height="20" src="res/icon/ios/icon-20.png" width="20" />
+        <icon height="180" src="res/icon/ios/icon-60@3x.png" width="180" />
+        <icon height="60" src="res/icon/ios/icon-60.png" width="60" />
+        <icon height="120" src="res/icon/ios/icon-60@2x.png" width="120" />
+        <icon height="76" src="res/icon/ios/icon-76.png" width="76" />
+        <icon height="152" src="res/icon/ios/icon-76@2x.png" width="152" />
+        <icon height="40" src="res/icon/ios/icon-40.png" width="40" />
+        <icon height="80" src="res/icon/ios/icon-40@2x.png" width="80" />
+        <icon height="57" src="res/icon/ios/icon.png" width="57" />
+        <icon height="114" src="res/icon/ios/icon@2x.png" width="114" />
+        <icon height="72" src="res/icon/ios/icon-72.png" width="72" />
+        <icon height="144" src="res/icon/ios/icon-72@2x.png" width="144" />
+        <icon height="167" src="res/icon/ios/icon-167.png" width="167" />
+        <icon height="29" src="res/icon/ios/icon-small.png" width="29" />
+        <icon height="58" src="res/icon/ios/icon-small@2x.png" width="58" />
+        <icon height="87" src="res/icon/ios/icon-small@3x.png" width="87" />
+        <icon height="50" src="res/icon/ios/icon-50.png" width="50" />
+        <icon height="100" src="res/icon/ios/icon-50@2x.png" width="100" />
+        <icon height="167" src="res/icon/ios/icon-167.png" width="167" />
+        <splash src="res/screen/ios/Default@2x~universal~anyany.png" />
+        <splash src="res/screen/ios/Default-568h@2x~iphone.png" />
+        <splash src="res/screen/ios/Default-Landscape-568h@2x~iphone.png" />
+        <splash src="res/screen/ios/Default-667h.png" />
+        <splash src="res/screen/ios/Default-736h.png" />
+        <splash src="res/screen/ios/Default@2x~iphone.png" />
+        <splash src="res/screen/ios/Default~iphone.png" />
+        <splash src="res/screen/ios/Default-Landscape-736h.png" />
+    </platform>
+    <engine name="android" spec="^6.2.3" />
+    <engine name="ios" spec="^4.4.0" />
+    <plugin name="cordova-plugin-device" spec="^1.1.6" />
+    <plugin name="cordova-plugin-firebase" spec="^0.1.23" />
+    <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
+    <plugin name="cordova-plugin-statusbar" spec="^2.2.3" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
+</widget>

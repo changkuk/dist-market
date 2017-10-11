@@ -1,0 +1,196 @@
+.wrapbody {
+    display: table;
+    margin: 0px;
+    width: 100%;
+    height: 93.2%;
+    background-color: #fafafa;
+}
+.divbody {
+    display: table-row;
+    margin: 0px;
+    width: 100%;
+    min-height: 91.5%;/*1096px*/
+    background-color: #fafafa;
+}
+
+.footer {
+    margin: 0px;
+    text-align: center;
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+/*.footer {*/
+/*    margin:0px;*/
+/*    text-align:center;*/
+/*    width:100%;*/
+/*    bottom:0;*/
+/*    margin-top: 14.8%;*/
+/*}*/
+
+#btn {
+    margin: 0px;
+    width: 100%;
+    height:3.4375em;/*110px; 110/2/16*/
+    /*        margin-top:-55px;*/
+    font-size:1.125em; /*36px; 36/2/16*/
+
+    background-color: #ededed;
+    font-family: AppleSDGothicNeo;
+    font-weight: bold;
+    text-align: center;
+    border:0;
+    outline:none;
+    color: #cccccc;
+}
+#btn:hover,#btn:focus {
+    border: none;
+    border:0;
+    outline:none;
+}
+
+p.sectiontitle {
+/*    margin-top: 35px; 35/2/16*/
+/*    margin-left: 15px; 30/2/16 */
+margin-top:5.4%;/*2.1875em; 70/2/16 , 1.09375em;, */
+margin-left:4%;/*0.9375em;, 4%;*/
+margin-bottom:1.2%;/* 1.2%; 0.5em; 16/2/16*/
+    font-family: AppleSDGothicNeo;
+    font-weight: bold;
+    text-align: left;
+    font-size:1.0625em;/*34/2/16*/
+    color: #333333;
+}
+
+div.wrap1 {
+    display: table;
+/*    margin-left: 15px; 15/16*/
+/*    margin-right: 15px;*/
+margin-left:0.9375em;/*4%; 30/2/16*/
+margin-right:0.9375em;/*4%; 30/2/16*/
+margin-bottom:0.90625em;/*2.9%; 29/2/16*/
+/*height: 7.5em;/*240/2/16*/*/
+height:18.5%;
+    border-radius: 1px;
+    background-color: #ffffff;
+    border: solid 1px #ededed;
+}
+div.content1 {
+    display: inline-block;
+/*    padding-left: 12.5px;*/
+/*    padding-right: 12.5px;*/
+/*    padding-top: 15px;*/
+height:6.5em;/*6.5em;208/2/16*/
+padding-top:3.8%;/*0.9375em;/*3.8%;*/
+    padding-left:3.6%;
+    padding-right:3.6%;
+    padding-bottom:0;
+    font-family: SFUIText;
+    font-size: 0.8125em;/*13px;*/
+    line-height: 1.46;
+    letter-spacing: -1px;
+    text-align: left;
+    color: #a7a7a7;
+    overflow-y: scroll;
+}
+p.ico_btn {
+/*    margin-top: 15px;*/
+/*    margin-left: 15px;*/
+/*    height: 52px;*/
+margin-top:2.2%;
+    margin:0;
+    padding:0;
+    margin-left:3.9%;/*0.90625em; 29/2/16, 3.9%;*/
+/*    margin-bottom:2.72875em;/*3%;*/
+    font-family: AppleSDGothicNeo;
+    font-size:0.9375em;
+    color: #333333;
+}
+
+img#check1, img#check2 {
+    width:1.625em;/*26px; 52/2/16*/
+    height:1.625em;/*26px;*/
+    margin:0;
+    padding:0;
+    outline:none;
+}
+
+@media screen and (max-width:767px) {
+/*    #btn {*/
+/*        height: 82.5px;*/
+/*/*        margin-top:-27.5px;*/
+/*        font-size: 27px;*/
+/*    }*/
+/*    .divbody {
+        padding-bottom:82.5px;
+    }
+ */
+/*    div.content1 {*/
+/*        font-size:19.5px;*/
+/*        height:156px;*/
+/*    }*/
+/*    img#check1, img#check2 {*/
+/*        width:39px;*/
+/*        height:39px;*/
+/*    }*/
+/*    p.sectiontitle {*/
+/*        font-size:25.5px;*/
+/*    }*/
+/*    p.ico_btn {*/
+/*        font-size: 22.5px;*/
+/*    }*/
+}
+/* ---- 3 */
+@media screen and (max-width : 479px) {
+/*    #btn {*/
+/*        height: 55px;*/
+/*/*        margin-top:-41.25px;*/
+/*        font-size: 18px;*/
+/*    }*/
+/*    .divbody {
+        padding-bottom:55px;
+    }*/
+/*    div.content1 {*/
+/*        font-size:13px;*/
+/*        height:104px;*/
+/*    }*/
+/*    img#check1, img#check2 {*/
+/*        width:26px;*/
+/*        height:26px;*/
+/*        outline:none;*/
+/*    }*/
+/*    p.sectiontitle {*/
+/*        font-size:17px;*/
+/*    }*/
+/*    p.ico_btn {*/
+/*        font-size: 15px;*/
+/*    }*/
+}
+/* ----  1 ipad 안드로이드, 아이폰은 따로 가야겠다. 글씨만 3x 로 가고 있으니까. 어떻게???
+ xhdpi 2x = ios @2x, xxhdpi = ios @3x
+ */
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+/*    #btn {*/
+/*        height: 110px;*/
+/*/*        margin-top:-55px;*/
+/*        font-size: 36px;*/
+/*    }*/
+/*    .divbody {
+        padding-bottom:110px;
+    }*/
+/*    div.content1 {*/
+/*        font-size:26px;*/
+/*        height:208px;*/
+/*    }*/
+/*    img#check1, img#check2 {*/
+/*        width:52px;*/
+/*        height:52px;*/
+/*    }*/
+/*    p.sectiontitle {*/
+/*        font-size:34px;*/
+/*    }*/
+/*    p.ico_btn {*/
+/*        font-size: 30px;*/
+/*    }*/
+}

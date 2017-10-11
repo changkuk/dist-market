@@ -1,0 +1,27 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.edticket.shuttleforparents"
+        },
+        "cordova-plugin-firebase": {
+            "PACKAGE_NAME": "com.edticket.shuttleforparents"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.edticket.shuttleforparents"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.edticket.shuttleforparents"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.edticket.shuttleforparents"
+        }
+    },
+    "dependent_plugins": {}
+}

@@ -1,0 +1,197 @@
+/*div.title {*/
+/*    margin: 0px;*/
+/*    display: block;*/
+/*    background-color: #5473ff;*/
+/*    line-height: 88px;*/
+/*    background-color: #5473ff;*/
+/*    */
+/*    font-family: AppleSDGothicNeo;*/
+/*    font-size: 18px;*/
+/*    font-weight: bold;*/
+/*    text-align: center;*/
+/*    color: #ffffff;*/
+/*}*/
+.comment {
+    width: 100%;
+/*    height: 56px;*/
+    margin:auto;
+    margin-top: 13.1%;
+    margin-bottom:3.7%;
+    
+    font-family: AppleSDGothicNeo;
+    line-height: 1.27;
+    text-align: center;
+    color: #5473ff;
+}
+#ex {
+    display: block;
+    margin: 0 auto;
+    background-color: #fafafa;
+    font-family: SFUIText;
+    text-align: center;
+    color: #ebebeb;
+    border-width: 0;
+}
+#ex:hover,#ex:focus {
+    border: none;
+    border:0;
+    outline:none;
+}
+
+.line {
+/*    width: 230px;*/
+/*    height: 0.5px;*/
+/*    margin-top: 8px;*/
+/*    margin-left: 72.5px;*/
+    margin-left: 19.3%;
+    margin-right: 19.3%;
+    margin-top:1.2%;
+    margin-bottom:0;
+    padding:0;
+}
+.imgouter {
+    text-align: center;
+    margin:0;
+    padding:0;
+    margin-top:3.4%;
+}
+.imgcomment {
+    font-family: AppleSDGothicNeo;
+    text-align: center;
+    color: #cccccc;
+    margin:0;
+    padding:0;
+    margin-top:1.4%;
+}
+.btn_experience {
+    padding:0;
+    margin:0;
+}
+
+.btn {
+    width: 100%;
+    background-color: #ededed;
+    border: 0;
+    margin-top: 7.8%;
+    
+    font-family: AppleSDGothicNeo;
+    font-weight: bold;
+    color: #cccccc;
+}
+.btn:hover,.btn:focus {
+    border: none;
+    border:0;
+    outline:none;
+}
+/*프로그래스 모달*/
+.progressModal {
+    display:none;
+    position:fixed;
+    z-index:1;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    padding-top:10em; /*400/2/16 : 상단부터 첫번째 테이블 첫번째 row 까지 400px */
+}
+.progressContent {
+    position:relative;
+    margin:auto;
+    padding:0;
+    width:80%;
+    height:40%;
+    font-size:1em;
+    padding-top:5%;
+    background-color:rgba(0,0,0,0.4);
+    border-radius: 2%;
+    
+    font-family: AppleSDGothicNeo;
+    text-align: center;
+    color: #cccccc;
+}
+div.loadingimg{
+    position:absolute;
+    width:50px;
+    height:50px;
+}
+.loadingimg {
+    width:50px;
+    height:50px;
+}
+
+@media screen and (max-width:767px) {
+    .comment {
+        font-size: 33px;
+    }
+    #ex {
+        font-size: 33px;
+    }
+    .line {
+        /*        width: 460px;*/
+        height: 1.5px;
+        border-bottom: solid 3px #5473ff;
+    }
+    .imgcomment {
+        font-size: 18px;
+    }
+    .btn_experience {
+        width:210px;
+        height:54px;
+    }
+    
+    .btn {
+        height: 82.5px;
+        font-size:27px;
+    }
+}
+/* ---- 3 */
+@media screen and (max-width : 479px) {
+    .comment {
+        font-size: 22px;
+    }
+    #ex {
+        font-size: 22px;
+    }
+    .line {
+        /*        width: 460px;*/
+        height: 1px;
+        border-bottom: solid 2px #5473ff;
+    }
+    .imgcomment {
+        font-size: 12px;
+    }
+    .btn_experience {
+        width:140px;
+        height:36px;
+    }
+
+    .btn {
+        height: 55px;
+        font-size:18px;
+    }
+}
+/* ----  1 ipad 안드로이드, 아이폰은 따로 가야겠다. 글씨만 3x 로 가고 있으니까. 어떻게??? */
+@media screen and (min-width:768px) and (max-width:1024px) {
+    .comment {
+        font-size: 44px;
+    }
+    #ex {
+        font-size: 44px;
+    }
+    .line {
+/*        width: 460px;*/
+        height: 2px;
+        border-bottom: solid 4px #5473ff;
+    }
+    .imgcomment {
+        font-size: 24px;
+    }
+    .btn_experience {
+        width:280px;
+        height:72px;
+    }
+    .btn {
+        height: 110px;
+        font-size:36px;
+    }
+}

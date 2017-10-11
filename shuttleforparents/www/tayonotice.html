@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
+        <link rel="stylesheet" type="text/css" href="css/tayoimgheader.css"/>
+        <link rel="stylesheet" type="text/css" href="css/tayonotice.css"/>
+        <link rel="stylesheet" type="text/css" href="css/tayoalert.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+</head>
+    <script type="text/javascript" src="js/tayoalert.js"></script>
+    <body onload="getNotiList()">
+<!--        <body>-->
+        <header>
+            <img id="previmg" src="img/header-prev.png" srcset="img/header-prev@2x.png 2x, img/header-prev@3x.png 3x" onclick="javascript:history.back()"/>
+<!--            <img id="configimg" src="img/ic-setting.png" srcset="img/ic-setting@2x.png 2x, img/ic-setting@3x.png 3x"/>-->
+        </header>
+        <p class="titlesection">공지사항</p>
+        <table id="content">
+        </table>
+        <script type="text/javascript" src="js/tayonotice.js"></script>
+    </body>
+</html>

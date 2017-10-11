@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
+        <link rel="stylesheet" type="text/css" href="css/tayotextheader.css"/>
+        <link rel="stylesheet" type="text/css" href="css/tayoreal.css"/>
+        <link rel="stylesheet" type="text/css" href="css/tayoalert.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    </head>
+<!--    <body onload="getSchedule()">-->
+    <body>
+            <header>
+                <div style="float:left; left:1em; display:inline;">
+                <img id="previmg" src="img/header-prev.png" srcset="img/header-prev@2x.png 2x, img/header-prev@3x.png 3x" onclick="gotoWeeklySchedule()"/>
+                </div>
+                <div id="realheader" style="clear:left; display:inline;"></div>
+            </header>
+            <div class="tab">
+                <p class="tabtitle"></p>
+                <p class="tabbuttons">
+                    <img id="skipbtn" class="bus_buttons" src="img/skipbus.png" srcset="img/skipbus@2x.png 2x, img/skipbus@3x.png 3x" onclick="onSkipbusbtn()"/>
+<!--                    <img id="notgoingbtn" class="bus_buttons" src="img/not_going.png" srcset="img/not_going@2x.png 2x, img/not_going@3x.png 3x" onclick="onNotgoingbtn()"/>-->
+                    <img id="callbtn" class="bus_buttons" src="img/calldriver.png" srcset="img/calldriver@2x.png 2x, img/calldriver@3x.png 3x" onclick="onCallbtn()"/>
+                </p>
+            </div>
+        <!-- 종료됐을때만 짜잔~ show up-->
+            <div class="endroute">
+                <img class="endrouteimg" src="img/route.png" srcset="img/route@2x.png 2x, img/route@3x.png 3x"/><p class="ending_msg">셔틀버스의 운행이 종료되었습니다.</p>
+            </div>
+
+            <div class="route">
+                <table class="route">
+<!--                    <tr>-->
+<!--                        <td class="img_td">-->
+<!--                            <img class="leave_img" src='img/leave.png' srcset='img/leave@2x.png 2x, img/leave@3x.png 3x'/></td>-->
+<!--                        <td class="starttd">튼튼영어</td></tr>-->
+<!--                    <tr>-->
+<!--                        <td rowspan="2"><p class="bus_line1"></p></td>-->
+<!--                        <td id="paddingtd" class="bordertd"></td></tr>-->
+<!--                    <tr><td id="paddingtd"></td></tr>-->
+<!--                    <tr>-->
+<!--                        <td class="img_td">-->
+<!--                            <img class="busstop_img1" src='img/busstop.png' srcset='img/busstop@2x.png 2x, img/busstop@3x.png 3x'/></td>-->
+<!--                        <td id="location1" class="locationtd">현대아파트</td></tr>-->
+<!--                    <tr>-->
+<!--                        <td rowspan="2"><p class="bus_line2"></p></td>-->
+<!--                        <td id="paddingtd" class="bordertd"></td></tr>-->
+<!--                    <tr><td id="paddingtd"></td></tr>-->
+<!--                    <tr>-->
+<!--                        <td class="img_td">-->
+<!--                            <img class="busstop_img2" src='img/dimbusstop.png' srcset='img/dimbusstop@2x.png 2x, img/dimbusstop@3x.png 3x'/></td>-->
+<!--                        <td class="locationtd">한솔리치빌</td></tr>-->
+<!--                    <tr>-->
+<!--                        <td rowspan="2"><p class="bus_line3"></p></td>-->
+<!--                        <td id="paddingtd"  class="bordertd"></td></tr>-->
+<!--                    <tr><td id="flexibletd"></td></tr>-->
+<!--                    <tr>-->
+<!--                        <td class="img_td">-->
+<!--<img class="bus_img" src='img/geton.png' srcset='img/geton@2x.png 2x, img/geton@3x.png 3x'/></td>-->
+<!--                        <td class="getontd">위례초등학교</td></tr>-->
+<!--                    <tr>-->
+<!--                        <td rowspan="2"><p class="flexible_line"></p></td>-->
+<!--                        <td id="flexibletd"  class="bordertd"></td></tr>-->
+<!--                    <tr><td id="paddingtd"></td></tr>-->
+<!--                    <tr>-->
+<!--                        <td class="img_td">-->
+<!--                            <img class="arrive_img" src='img/arrive.png' srcset='img/arrive@2x.png 2x, img/arrive@3x.png 3x'/></td>-->
+<!--                        <td class="endtd">튼튼영어</td></tr>-->
+                </table>
+            </div>
+
+        <div class="navibar">
+<!--            <button id="sid1" class="sidbtn">-->
+<!--                <img class="sidbtn" src="img/btn.png" srcset="img/btn@2x.png 2x, img/btn@3x.png 3x">김지수</img>-->
+<!--            </button>-->
+<!--            <button id="sid2" class="sidbtn">-->
+<!--                <img class="sidbtn" src="img/btn.png" srcset="img/btn@2x.png 2x, img/btn@3x.png 3x">김지현</img>-->
+<!--            </button>-->
+        </div>
+        
+        <div class="movingdiv">
+            <img class="boximg" src="img/box.png" srcset="img/box@2x.png 2x, img/box@3x.png 3x"/>
+            <div class="text_in_box_div"></div>
+            <img class="fixedBus" src="img/bus.png" srcset="img/bus@2x.png 2x, img/bus@3x.png 3x"/>
+        </div>
+        
+        <div class="pinModal">
+            <div class="modalContent">
+                <div class="modalheader">
+                <span class="closeSpan" onclick="closeModal()">&times;</span>
+                </div>
+                <p>하원차량도 변경할까요?</p>
+                <button class="comfirmBtn" onclick="goToComingSchedule()">하원차량 확인하러가기</button>
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="js/tayoreal.js"></script>
+        <script type="text/javascript" src="js/tayoalert.js"></script>
+    </body>
+</html>

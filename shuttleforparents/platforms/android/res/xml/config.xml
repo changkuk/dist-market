@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.edticket.shuttleforparents" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="FirebasePlugin">
+        <param name="android-package" value="org.apache.cordova.firebase.FirebasePlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <description>
+        안전한 어린이통학 전문 서비스 셔틀타요에서 만든 학부모용 '셔틀타요 어플리케이션'입니다.
+    </description>
+    <author email="developer@edticket.com" href="http://tayotayo.net">
+        Edticket.Co.Ltd.,
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <name>셔틀타요</name>
+    <allow-intent href="market:*" />
+    <icon density="ldpi" src="res/icon/android/icon_ldpi_18.png" />
+    <icon density="ldpi" src="res/icon/android/Icon-ldpi.png" />
+    <icon density="mdpi" src="res/icon/android/Icon-mdpi.png" />
+    <icon density="hdpi" src="res/icon/android/Icon-hdpi.png" />
+    <icon density="xhdpi" src="res/icon/android/Icon-xhdpi.png" />
+    <icon density="xxhdpi" src="res/icon/android/Icon-xxhdpi.png" />
+    <icon density="xxxhdpi" src="res/icon/android/Icon-xxxhdpi.png" />
+    <splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png" />
+    <splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png" />
+    <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png" />
+    <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png" />
+    <splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.png" />
+    <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="Orientation" value="portrait" />
+</widget>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>383793938645-5m8ibi3ebj5ud3t47l31rtv61c9tr2ee.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.383793938645-5m8ibi3ebj5ud3t47l31rtv61c9tr2ee</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDahdPinsChXb3ZOK-MQ16drP7w_L5OWF4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>383793938645</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.edticket.shuttleforparents</string>
+	<key>PROJECT_ID</key>
+	<string>shuttle4parent</string>
+	<key>STORAGE_BUCKET</key>
+	<string>shuttle4parent.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:383793938645:ios:33fe3a04f15c1213</string>
+	<key>DATABASE_URL</key>
+	<string>https://shuttle4parent.firebaseio.com</string>
+</dict>
+</plist>

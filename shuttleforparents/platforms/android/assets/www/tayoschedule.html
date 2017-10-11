@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
+        <link rel="stylesheet" type="text/css" href="css/tayoimgheader.css"/>
+        <link rel="stylesheet" type="text/css" href="css/tayoschedule.css"/>
+        <link rel="stylesheet" type="text/css" href="css/tayoalert.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-database.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/tayoschedule.js"></script>
+        <script type="text/javascript" src="js/firebase.js"></script>
+        <script>
+//            var fbApp = firebase.initializeApp(config);
+//            var fcmRef = firebase.database();
+        </script>
+
+    </head>
+<!--    <body onload="getSchedule()">-->
+<body>
+        <header>
+            <a class="configa" href="tayoconfig.html">
+                <img id="configimg" src="img/ic-setting.png" srcset="img/ic-setting@2x.png 2x, img/ic-setting@3x.png 3x"/>
+            </a>
+        </header>
+        <div class="tab">
+            <button class="tablink" onclick="openSchedule('mon')">
+                <p class="day">월</p>
+                <p id="mon" class="date"></p>
+            </button>
+            <button class="tablink" onclick="openSchedule('tue')">
+                <p class="day">화</p>
+                <p id="tue" class="date"></p>
+            </button>
+            <button class="tablink" onclick="openSchedule('wed')">
+                <p class="day">수</p>
+                <p id="wed" class="date"></p>
+            </button>
+            <button class="tablink" onclick="openSchedule('thu')">
+                <p class="day">목</p>
+                <p id="thu" class="date"></p>
+            </button>
+            <button class="tablink" onclick="openSchedule('fri')">
+                <p class="day">금</p>
+                <p id="fri" class="date"></p>
+            </button>
+            <button class="tablink" onclick="openSchedule('sat')">
+                <p class="day">토</p>
+                <p id="sat" class="date"></p>
+            </button>
+        </div>
+        <div class="comment">
+            <img class='noti' style="float:left" src='img/noti.png' srcset='img/noti@2x.png 2x, img/noti@3x.png 3x'></img>아래 스케쥴은 당일 오전 8시에 최종확정 됩니다.
+        </div>
+        
+        <div class="noschedule">
+            <img class="noscheduleimg" src="img/noschedule.png" srcset="img/noschedule@2x.png 2x, img/noschedule@3x.png 3x">셔틀 운행 스케쥴이 없습니다.</img>
+        </div>
+
+
+
+<!--        <div id="mon" class="container">-->
+<!--        <div class="academies">-->
+<!--            <table class="academy">-->
+<!--                <tr class="aName"><td class="aName" colspan="4">튼튼영어<td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>-->
+<!--                    <table class="schedules">-->
+<!--                        <tr class="goingBus">-->
+<!--                            <td class="img_td"><img class="bus_img" src='img/contents.png' srcset='img/contents@2x.png 2x, img/contents@3x.png 3x'></img>등원-->
+<!--                            </td>-->
+<!--                            <td class="time_td"><p>14:45</p>-->
+<!--                            </td>-->
+<!--                            <td class="addr_td"><p class="busid">3호차<img class="live_img" src='img/live.png' align='middle' srcset='img/live@2x.png 2x, img/live@3x.png 3x'></img></p><p class="addr">위례별초 후문 위례별초</p>-->
+<!--                            </td>-->
+<!--                            <td class="goreal_td"><p><img class="arrow_img" src='img/sched-arrow.png' srcset='img/sched-arrow@2x.png 2x, img/sched-arrow@3x.png 3x'></img></p>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        <tr class="comingBus">-->
+<!--                            <td class="img_td"><img class="bus_img" src='img/contents-1.png' srcset='img/contents@2x.png 2x, img/contents@3x.png 3x'></img>하원-->
+<!--                            </td>-->
+<!--                            <td class="time_td"><p>14:45</p>-->
+<!--                            </td>-->
+<!--                            <td class="addr_td"><p class="busid">3호차<img class="live_img" src='img/live.png' align='middle' srcset='img/live@2x.png 2x, img/live@3x.png 3x'></img></p><p>위례별초 후문 위례별초</p>-->
+<!--                            </td>-->
+<!--                            <td class="goreal_td"><p><img class="arrow_img" src='img/sched-arrow.png' srcset='img/sched-arrow@2x.png 2x, img/sched-arrow@3x.png 3x'></img></p>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                    </table>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--            </table>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--        <div id="tue" class="container">-->
+<!--            <div class="academies">-->
+<!--                <table class="academy">-->
+<!--                    <tr class="aName"><td class="aName" colspan="4">튼튼영어<td>-->
+<!--                        </tr>-->
+<!--                    <tr>-->
+<!--                        <td>-->
+<!--                            <table class="schedules">-->
+<!--                                <tr class="goingBus">-->
+<!--                                    <td class="img_td"><img class="bus_img" src='img/contents.png' srcset='img/contents@2x.png 2x, img/contents@3x.png 3x'></img>등원-->
+<!--                                    </td>-->
+<!--                                    <td class="time_td"><p>14:45</p>-->
+<!--                                    </td>-->
+<!--                                    <td class="addr_td"><p class="busid">3호차<img class="live_img" src='img/live.png' align='middle' srcset='img/live@2x.png 2x, img/live@3x.png 3x'></img></p><p class="addr">위례별초 후문 위례별초</p>-->
+<!--                                    </td>-->
+<!--                                    <td class="goreal_td"><p><img class="arrow_img" src='img/sched-arrow.png' srcset='img/sched-arrow@2x.png 2x, img/sched-arrow@3x.png 3x'></img></p>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                                <tr class="comingBus">-->
+<!--                                    <td class="img_td"><img class="bus_img" src='img/contents-1.png' srcset='img/contents@2x.png 2x, img/contents@3x.png 3x'></img>하원-->
+<!--                                    </td>-->
+<!--                                    <td class="time_td"><p>14:45</p>-->
+<!--                                    </td>-->
+<!--                                    <td class="addr_td"><p class="busid">3호차</p><p>위례별초 후문 위례별초</p>-->
+<!--                                    </td>-->
+<!--                                    <td class="goreal_td"><p><img class="arrow_img" src='img/sched-arrow.png' srcset='img/sched-arrow@2x.png 2x, img/sched-arrow@3x.png 3x'></img></p>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                            </table>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+<!--                </table>-->
+<!--            </div>-->
+<!--        </div>-->
+        <!-- end container-->
+        <div class="navibar">
+<!--            <button id="sid1" class="sidbtn">-->
+<!--                <img class="sidbtn" src="img/btn.png" srcset="img/btn@2x.png 2x, img/btn@3x.png 3x">김지수</img>-->
+<!--            </button>-->
+<!--            <button id="sid2" class="sidbtn">-->
+<!--                <img class="sidbtn" src="img/btn.png" srcset="img/btn@2x.png 2x, img/btn@3x.png 3x">김지현</img>-->
+<!--            </button>-->
+        </div>
+
+<!-- The Modal -->
+<div class="modal">
+    <img class="modal1" src="img/coach-main.png" srcset="img/coach-main@2x.png 2x, img/coach-main@3x.png 3x" onclick="closeModal(1)"/>
+    <img class="modal2" src="img/coach-route.png" srcset="img/coach-route@2x.png 2x, img/coach-route@3x.png 3x" onclick="closeModal(2)"/>
+</div>
+
+<div class="pinModal" onclick="goToRootPage()">
+    <div class="modalContent">
+        <table>
+            <tr><td>유효하지 않은 핀번호입니다.<br/>핀번호를 다시 입력해야합니다.</td></tr>
+            <tr><td><button class="comfirmBtn" onclick="goToRootPage()">확인</button></td></tr>
+        </table>
+        <!--<span class="closeSpan">&times;</span>-->
+        <p></p>
+    </div>
+</div>
+
+<!--<div class="pushModal">-->
+<!--    <div class="pushContent">-->
+<!--        <p>푸쉬알림을 받으시겠습니까? <br/>이후, 설정에서 변경하실 수 있습니다.</p>-->
+<!--        <button class="Btn" onclick="requestPermission()">예</button>-->
+<!--        <button class="Btn" onclick="toDenyPush()">아니오</button>-->
+<!--    </div>-->
+<!--</div>-->
+
+<div class="progressModal">
+    <div class="progressContent">
+        <p>셔틀타요를 시작합니다.<br/>잠시만 기다리세요.</p>
+        <div class="loadingimg">
+            <img class="loadingimg" src="img/loading.png" srcset="img/loading@2x.png 2x, img/loading@3x.png 3x"></img>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/tayoalert.js"></script>
+
+    </body>
+
+</html>

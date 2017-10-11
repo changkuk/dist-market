@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/tayotextheader.css">
+        <link rel="stylesheet" type="text/css" href="css/auth.css">
+            <link rel="stylesheet" type="text/css" href="css/tayoalert.css">
+            
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-database.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/auth.js"></script>
+        <script type="text/javascript" src="js/firebase.js"></script>
+        <script type="text/javascript" src="js/tayoalert.js"></script>
+        <script>
+        // Initialize the Firebase app in the service worker by passing in the
+        // messagingSenderId.
+//        var fbApp = firebase.initializeApp(config);
+//        var fcmRef = firebase.database();
+        </script>
+        <title>auth</title>
+    </head>
+    
+    <body>
+        <header>핀번호 입력</header>
+<!--        <div class="title">핀번호 입력</div>-->
+        <p class="comment">학원에서 제공받은 핀번호를<br> 아래에 입력해주세요</p>
+<!--        <p class="ex" >ex. A203C92F</p>
+ http://curtis-tayotayo.edticket.com/api/getStudentInfo
+-->
+        <input id="ex" type="text" placeholder="ex. A203C92F" onclick="changeStyle()"></input>
+        <p class="line"></p>
+        <p class=imgouter>
+        <img src="img/btn-experience.png" srcset="img/btn-experience@2x.png 2x, img/btn-experience@3x.png 3x" class="btn_experience" onclick="window.location.replace('tayoschedule.html?restart:experience')">
+        </img>
+        </p>
+        <p class=imgcomment>셔틀타요를 미리 체험해보세요!</p>
+
+        <button class="btn" onclick="goLoginByButton()">가입하기</button>
+        <div class="progressModal">
+            <div class="progressContent">
+                <p>셔틀타요를 시작합니다.<br/>잠시만 기다리세요.</p>
+                <div class="loadingimg">
+                <img class="loadingimg" src="img/loading.png" srcset="img/loading@2x.png 2x, img/loading@3x.png 3x"></img>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

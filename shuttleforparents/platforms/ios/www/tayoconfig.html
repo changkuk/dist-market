@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/tayoimgheader.css"/>
+        <link rel="stylesheet" type="text/css" href="css/tayoconfig.css"/>
+        <link rel="stylesheet" type="text/css" href="css/tayoalert.css">
+<!--        <link rel="stylesheet" type="text/css" href="css/tayoprogress.css">-->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/tayoconfig.js"></script>
+        <script type="text/javascript" src="js/tayoalert.js"></script>
+<!--        <script type="text/javascript" src="js/tayoprogress.js"></script>-->
+
+        <title>tayoconfig</title>
+    </head>
+<!--    <body onload="getNoti()">-->
+    <body>
+        <header>
+            <source srcset="img/header@2x.png" media="(min-width:392px)"/>
+            <source srcset="img/header@3x.png" media="(min-width:588px)"/>
+            
+            <img id="previmg" src="img/header-prev.png" srcset="img/header-prev@2x.png 2x, img/header-prev@3x.png 3x" onclick="javascript:history.back()"/>
+<!--            <img id="headimg" src="img/header.png"/>-->
+        </header>
+
+        <table>
+            <tr onclick="window.location.href='tayonotice.html'">
+                <td class="lefttd">공지사항</td>
+                <td class="righttd1">
+                    <img src="img/invalid-name.png"
+                            srcset="img/invalid-name@2x.png 2x, img/invalid-name@3x.png 3x" class="closure" onclick="window.location.href='tayonotice.html'">
+                    </img>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td class="lefttd">당일 셔틀스케쥴 알림</td>
+                <td class="righttd2">
+                    <img id="checkImg" src="img/off.png"
+                            srcset="img/off@2x.png 2x, img/off@3x.png 3x" class="onnoti" onclick="setNoti()">
+                    </img>
+                </td>
+            </tr>
+            <tr>
+                <td class="lefttd">핀번호 확인</td>
+                <td class="righttd3"></td>
+            </tr>
+        </table>
+
+    </body>
+</html>

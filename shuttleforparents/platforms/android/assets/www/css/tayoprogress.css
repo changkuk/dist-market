@@ -1,0 +1,38 @@
+.progressModal {
+    display:block;
+    position:fixed;
+    z-index:1;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    padding-top:10em; /*400/2/16 : 상단부터 첫번째 테이블 첫번째 row 까지 400px */
+}
+.progressContent {
+    position:relative;
+    margin:auto;
+    padding:0;
+    width:80%;
+    height:40%;
+    font-size:1em;
+    padding-top:5%;
+    background-color:rgba(0,0,0,0.4);
+    border-radius: 2%;
+    
+    font-family: AppleSDGothicNeo;
+    text-align: center;
+    color: #cccccc;
+}
+div.loadingimg{
+    position:absolute;
+    width:1.5625em;
+    height:1.5625em;
+/*    width:50px;*/
+/*    height:50px;*/
+}
+.loadingimg {
+        width:1.5625em;
+        height:1.5625em;
+/*    width:50px;*/
+/*    height:50px;*/
+}

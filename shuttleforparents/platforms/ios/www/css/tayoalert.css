@@ -1,0 +1,29 @@
+.tayoAlert {
+    display:block;
+    position:fixed;
+    z-index:1;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    padding-top:10em; /*400/2/16 : 상단부터 첫번째 테이블 첫번째 row 까지 400px */
+    background-color:rgba(0,0,0,0.4);
+}
+.alertContent {
+    position:relative;
+    margin:auto;
+    padding:0;
+    width:60%;
+    height:30%;
+    border-radius: 2%;
+    font-size:1em;
+    text-align:center;
+    background-color :#ebebeb;
+    font-family: AppleSDGothicNeo;
+    text-align: center;
+    color: #aaaaaa;
+}
+table {
+    height:100%;
+    width:100%;
+}
