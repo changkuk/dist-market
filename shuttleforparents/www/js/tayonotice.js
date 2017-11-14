@@ -77,7 +77,8 @@ function getNotiList() {
            var ret = JSON.parse(xhr.responseText);
            if (ret.code == 400) {
 //                $("#notilist").text("파라미터가 유효하지 않습니다.");
-                makeAlert('파라미터가 유효하지 않습니다.');
+//                makeAlert('파라미터가 유효하지 않습니다.');
+                alert('파라미터가 유효하지 않습니다.');
            } else {
                 var notilist = ret.noticelist;
 //                var templist = "";

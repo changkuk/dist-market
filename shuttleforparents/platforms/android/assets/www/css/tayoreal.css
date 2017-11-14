@@ -8,6 +8,7 @@ div.tab {
     width: 100%;
     height:12.6%;
     background-color: #5473ff;
+    border-top: solid 2px rgba(0, 0, 0, 0.06);
 }
 p.tabtitle {
     font-family: AppleSDGothicNeo;
@@ -16,24 +17,33 @@ p.tabtitle {
     text-align: center;
     color: #ffffff;
     width:100%;
+    padding:0;
+    margin:0;
+    border:0;
     margin:auto;
     margin-top:1.25em;
 }
 p.tabbuttons {
     text-align:center;
+    padding:0;
+    margin:0;
+    border:0;
     margin:auto;
 /*    margin-bottom:5%;*/
-    margin-top:1.6875em;
-    margin-bottom:1.6875em;
+margin-top:1.25em;/*1.6875em;*/
+margin-bottom:1.25em;/*1.6875em;*/
 }
 img.bus_buttons {
     /* 버튼3개일때
      width:147px;
      height:57px;
      */
-    width:7.6875em;
-    height:2.375em;
-    
+    width:7.6875em; /*246/2/16*/
+    height:2.375em;/*76/2/16*/
+    outline:none;
+    border:0;
+    margin:0;
+    padding:0;
 }
 
 #skipbtn {/*버튼 2개일때*/
@@ -78,6 +88,7 @@ img.endrouteimg {
     bottom:0.7em;/*5px;*/
     left: 0.4375em;/*2px*/
     font-size:0.6875em;
+    color:#6584fb;
 /*    padding-left:0.4375em;*/
 /*    padding-bottom:0.1563em;*/
 }
@@ -306,8 +317,17 @@ img.sidbtn {
  1.5x hdpi
  */
 @media screen and (max-width:767px) {
+    div.tab {
+        border-top: solid 1.5px rgba(0, 0, 0, 0.06);
+    }
+    /*
+    p.tabtitle {
+        font-size:37.5px;
+        margin-top:45px;
+    }
+
 /*    .lefttd {*/
-/*        width:202.5px;/*left + boximg.width + fixedbus.width*/*/
+/*        width:202.5px;/*left + boximg.width + fixedbus.width*/
 /*    }*/
 
 /*    img.endrouteimg {*/
@@ -355,8 +375,17 @@ img.sidbtn {
  mdpi 1x
  */
 @media screen and (max-width : 479px) {
+    div.tab {
+        border-top: solid 1px rgba(0, 0, 0, 0.06);
+    }
+    /*
+    p.tabtitle {
+        font-size:25px;
+        margin-top:30px;
+    }
+
 /*    .lefttd {*/
-/*        width:135px;/*left + boximg.width + fixedbus.width*/*/
+/*        width:135px;/*left + boximg.width + fixedbus.width*/
 /*    }*/
 
 /*    img.endrouteimg {*/
@@ -407,13 +436,25 @@ img.sidbtn {
 /*        height:55px;*/
 /*    }*/
 }
+
+
 /* ----  1 ipad 안드로이드, 아이폰은 따로 가야겠다. 글씨만 3x 로 가고 있으니까. 어떻게??? 
  xhdpi 2x = ios @2x, xxhdpi = ios @3x
  */
 
 @media screen and (min-width:768px) and (max-width:1024px) {
+    div.tab {
+        border-top: solid 2px rgba(0, 0, 0, 0.06);
+    }
+
+    /*
+    p.tabtitle {
+        font-size:50px;
+        margin-top:60px;
+    }
+
 /*    .lefttd {*/
-/*        width:270px;/*left + boximg.width + fixedbus.width*/*/
+/*        width:270px;/*left + boximg.width + fixedbus.width*/
 /*    }*/
 
 /*    img.endrouteimg {*/
@@ -437,8 +478,8 @@ img.sidbtn {
 /*        width:14px;*/
 /*    }*/
 
-/*    td {/* work-break:break-all 자동줄바꿈..?*/*/
-/*        /*font-size:34px;*/*/
+/*    td {/* work-break:break-all 자동줄바꿈..?*/
+/*        /*font-size:34px;*/
 /*        font-size:2em;*/
 /*    }*/
 /*    td.bordertd {*/

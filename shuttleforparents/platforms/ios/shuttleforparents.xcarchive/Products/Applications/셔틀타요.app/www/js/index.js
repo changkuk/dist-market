@@ -45,11 +45,35 @@ var app = {
 //        window.localStorage.setItem("localuid", localuid);
 //        window.localStorage.setItem("localtoken", token);
 //        window.localStorage.getItem("recvpush");
+// "devicetoken"
 
 //확인해봐야할 것들.
 //sid 에 해당 스케쥴이 없어도 list 없이 다른 정보는 getSchedule 에서 주는가
 // ios permission 을 YES  를 하고, 설정에서 끄면, 메시지가 안와.
 //실시간, 상단 글자를 서버에서 <br/> 붙여서 주면 어떨까?
+        var dev_plat = device.platform;
+        dev_plat = dev_plat.toLowerCase();
+
+        if (dev_plat == 'android') {
+            StatusBar.backgroundColorByHexString("#5473ff");
+        }
+        
+        function getDeviceToken() {
+            try {
+                window.FirebasePlugin.getToken(function(token) {
+                                               window.localStorage.setItem("devicetoken", token);
+                                               }, function(error) {
+                                               });
+                
+                window.FirebasePlugin.onTokenRefresh(function(token) {
+                                                     window.localStorage.setItem("devicetoken", token);
+                                                     }, function(error) {
+                                                     });
+            } catch(err) {
+            }
+        }
+
+        getDeviceToken();
         if(window.localStorage) {
             var localuid = null;
             localuid = window.localStorage.getItem("localuid");

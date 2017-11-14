@@ -18,9 +18,12 @@ var phone2 = null;
 
 var secondLoad = false; // 하원안타요 유도후. 계속, 두번째 로딩값들을 유지하기 위해서
 
+var m_lflag = null;
+
 // 학원안가요. 이번버전에서 빠짐
 //var notgoingbtn_on = true;
-var skipbtn_on = true;
+
+var skipbtn_on = true;//이게 왜 필요하냐면 현재는 셔틀타요 -> 셔틀안타요만 변경가는해서, 반대경우는 못하게 하려고.
 var callbtn_on = true;
 var m_timer = null; // 1분마다 페이지 다시 로딩
 var m_timerInterval = 60000; // 1분마다 페이지 다시 로딩
@@ -43,9 +46,9 @@ $(document).ready(function(){
         getRealtime();
         getRouteMap();
         makeSibButton();
-        $(".text_in_box_div").text("셔틀타요");
-        $(".text_in_box_div").css("font-size","0.6em");
-        $("#realheader").text("셔틀타요");
+        $(".text_in_box_div").text("4호차");
+//        $(".text_in_box_div").css("font-size","0.6em");
+        $("#realheader").text("4호차");
         return;
     }
 
@@ -58,11 +61,14 @@ $(document).ready(function(){
     phonenum = phone1 = data[7].split(":");
     in_sid = data[8].split(":");
                   
-    if(data.length > 9) {
+    if(data.length > 10) {
+        m_lflag = 'true';
         inventory2 = data[9].split(":");
         schedule2 = data[10].split(":");
         carnum2 = data[11].split(":");
         phone2 = data[12].split(":");
+    } else {
+        m_lflag = (data[9].split(":"))[1];
     }
 
     getLoadInfo(schedule);
@@ -72,8 +78,10 @@ $(document).ready(function(){
     $(".text_in_box_div").text(carnum[1]+"호차");
     $("#realheader").text(carnum[1]+"호차");
 
-    $("#skipbtn").attr("src", "img/skipbus.png");
-    $("#skipbtn").attr("srcset", "img/skipbus@2x.png 2x, img/skipbus@3x.png");
+//여기서하면 안되지. getLoadInfo 에서 할거니까.
+//    $("#skipbtn").attr("src", "img/skipbus.png");
+//    $("#skipbtn").attr("srcset", "img/skipbus@2x.png 2x, img/skipbus@3x.png");
+                  
 // 학원안가요. 이번버전에서 빠짐
 //    $("#notgoingbtn").attr("src", "img/not_going.png");
 //    $("#notgoingbtn").attr("srcset", "img/not_going@2x.png 2x, img/not_going@3x.png");
@@ -94,6 +102,7 @@ function closeModal() {
     $(".pinModal").hide();
 }
 function goToComingSchedule() {
+    m_lflag = 'false';
     $(".pinModal").hide();
     secondLoad = true;
     getLoadInfo(schedule2);
@@ -105,8 +114,10 @@ function goToComingSchedule() {
     $(".text_in_box_div").text(carnum2[1]+"호차");
     $("#realheader").text(carnum2[1]+"호차");
     
-    $("#skipbtn").attr("src", "img/skipbus.png");
-    $("#skipbtn").attr("srcset", "img/skipbus@2x.png 2x, img/skipbus@3x.png");
+// 여기서하면 안되지. getLoadInfo 에서만 하면 되니까.
+//    $("#skipbtn").attr("src", "img/skipbus.png");
+//    $("#skipbtn").attr("srcset", "img/skipbus@2x.png 2x, img/skipbus@3x.png");
+    
     if (istoday[1] == "true") { //오늘
         $("#callbtn").attr("src", "img/calldriver.png");
         $("#callbtn").attr("srcset", "img/calldriver@2x.png 2x, img/calldriver@3x.png");
@@ -179,42 +190,52 @@ function onSkipbusbtn() {
                 canChange = false;
             break;
     }
-    if(false == skipbtn_on && false == canChange) {
-        makeAlert('당일은 변경할 수가 없습니다.');
+
+    //당일이면 변경 불가
+    if(false == canChange) {
+        alert('당일은 변경할 수가 없습니다.');
+        return;
     }
-    if(canChange || true == skipbtn_on) {
-        if(secondLoad == true)//하원차량
-            var l_scheduleid = schedule2;
-        else
-            var l_scheduleid = schedule;
-        
+    // '셔틀안타요' 비활성화. 이때는 당일이 아니여도 변경이 불가하다.
+    if(false == skipbtn_on) {
+//        makeAlert('당일은 변경할 수가 없습니다.');
+        alert('다시 셔틀을 이용하시려면 학원으로 연락해주세요.');
+        return;
+    }
+    
+    if(secondLoad == true)//하원차량
+        var l_scheduleid = schedule2;
+    else
+        var l_scheduleid = schedule;
+
         // 서버에 알려줘야겠지.
         // 앞으로 계속 비활성화 되어야하니까.... 어딘가 저장을 해야겠지...
-        $.ajax({url:"https://api.edticket.com/api/todayLoad",
-               method: "POST",
-//               data: $.param({sid:parseInt(in_sid[1]), scheduletable_id:parseInt(schedule[1])}),
-               data: $.param({scheduletable_id:l_scheduleid[1], sid:in_sid[1]}),
-               success:function(result, status, xhr){
-               var ret = JSON.parse(xhr.responseText);
+    $.ajax({url:"https://api.edticket.com/api/todayLoad",
+            method: "POST",
+//              data: $.param({sid:parseInt(in_sid[1]), scheduletable_id:parseInt(schedule[1])}),
+            data: $.param({scheduletable_id:l_scheduleid[1], sid:in_sid[1]}),
+            success:function(result, status, xhr){
+            var ret = JSON.parse(xhr.responseText);
 //               alert(ret.code +":"+ret.msg);
-               if(200 == ret.code) {//if(false == skipbtn_on) {
-                    skipbtn_on = true;
-                    $("#skipbtn").attr("src", "img/skipbus.png");
-                    $("#skipbtn").attr("srcset", "img/skipbus@2x.png 2x, img/skipbus@3x.png");
-               } else if(201 == ret.code) { //} else {
-                    skipbtn_on = false;
-                    $("#skipbtn").attr("src", "img/skipbus-dim.png");
-                    $("#skipbtn").attr("srcset", "img/skipbus-dim@2x.png 2x, img/skipbus-dim@3x.png");
-               }
-               // 관련된 하원스케쥴이 있으면 modal 띄워줘.
-               },
-               error:function(status, err) {
-                    makeAlert('스케쥴 정보가 존재하지 않습니다.');
-               }
-               });
-        if(inventory2 && secondLoad == false)
-            $(".pinModal").show();
-    }
+            if(200 == ret.code) {//if(false == skipbtn_on) {
+                skipbtn_on = true;
+                $("#skipbtn").attr("src", "img/skipbus.png");
+                $("#skipbtn").attr("srcset", "img/skipbus@2x.png 2x, img/skipbus@3x.png");
+            } else if(201 == ret.code) { //} else {
+                skipbtn_on = false;
+                $("#skipbtn").attr("src", "img/skipbus-dim.png");
+                $("#skipbtn").attr("srcset", "img/skipbus-dim@2x.png 2x, img/skipbus-dim@3x.png");
+            }
+            // 관련된 하원스케쥴이 있으면 modal 띄워줘.
+            },
+            error:function(status, err) {
+//                    makeAlert('스케쥴 정보가 존재하지 않습니다.');
+                alert('스케쥴 정보가 존재하지 않습니다.');
+            }
+            });
+
+    if(inventory2 && secondLoad == false)
+        $(".pinModal").show();
 }
 
 function getLoadInfo(scheduleid) {
@@ -230,12 +251,14 @@ function getLoadInfo(scheduleid) {
                 $("#skipbtn").attr("src", "img/skipbus-dim.png");
                 $("#skipbtn").attr("srcset", "img/skipbus-dim@2x.png 2x, img/skipbus-dim@3x.png");
            } else if (400 == ret.code || 401 == ret.code) {
-                makeAlert(ret.msg);
+//                makeAlert(ret.msg);
+                alert(ret.msg);
            }
            },
            
            error:function(status, err) {
-                makeAlert('현재 상황을 알 수가 없습니다. 나중에 다시 시도해주세요.');
+//                makeAlert('현재 상황을 알 수가 없습니다. 나중에 다시 시도해주세요.');
+                alert('현재 상황을 알 수가 없습니다. 나중에 다시 시도해주세요.');
            }
            });
 }
@@ -283,16 +306,12 @@ function makeTabTitle(in_code, in_str) {
 }
 var cur_ret_code = null;
 
-//"http://curtis-tayotayo.edticket.com/api/getRealtimeLocation?sid=616"
-//"http://api.edticket.com/api/getRealtimeLocation?sid=616"
 function getRealtime(inventoryid) {
     if(inventory[1] == "experience") {
         mURL ="https://api.edticket.com/api/experienceGetRealtimeLocation";
     } else {
         mURL ="https://api.edticket.com/api/getRealtimeLocation?sid="+in_sid[1]+"&inventory_id="+inventoryid[1]+"&pin_number="+window.localStorage.getItem("localpin");
     }
-//    mURL = "http://api.edticket.com/api/getRealtimeLocationDebug?debug_id=200"; // 디버깅용
-//    mURL = "http://api.edticket.com/api/getRealtimeLocation?rawhm=1642&hm=16:42&d=%EC%9B%94&today=20170921&sid=781&debug=1&inventory_id=1071"
     
     $.ajax({url:mURL, success:function(result, status, xhr){
            var ret = JSON.parse(xhr.responseText);
@@ -339,7 +358,8 @@ function getRealtime(inventoryid) {
            },
            
            error:function(status, err) {
-               makeAlert('현재 상황을 알 수가 없습니다. 나중에 다시 시도해주세요.');
+//               makeAlert('현재 상황을 알 수가 없습니다. 나중에 다시 시도해주세요.');
+                alert('현재 상황을 알 수가 없습니다. 나중에 다시 시도해주세요.');
            }
            });
 }
@@ -402,7 +422,8 @@ function getRouteMap(inventoryid) {
            var ret = JSON.parse(xhr.responseText);
            //400 param 유효하지 않다 401 사용자가 없다 402 inventory 에 해당 sid 정보 없다.
            if (ret.code == 400 || ret.code == 401 || ret.code == 402) {
-                makeAlert(ret.msg);
+//                makeAlert(ret.msg);
+                alert(ret.msg);
 //                $("div.route").text(ret.msg);
            } else {
            
@@ -415,18 +436,22 @@ function getRouteMap(inventoryid) {
                var res = "";
                for(var i = 0; i<routeData.length; i++) {
                    if(i == 0) {
-                       res = "<tr><td class='img_td lefttd'><img class='leave_img' src='img/leave_dim.png' srcset='img/leave_dim@2x.png 2x, img/leave_dim@3x.png 3x'/></td><td class='starttd righttd'>"+routeData[i].addr+"</td></tr><tr><td class='lefttd' rowspan='2'><p class='bus_line1'></p></td><td id='paddingtd' class='bordertd righttd'></td></tr><tr><td id='paddingtd' class='righttd'></td></tr>"
+                       res = "<tr><td class='img_td lefttd'><img class='leave_img' src='img/leave_dim.png' srcset='img/leave_dim@2x.png 2x, img/leave_dim@3x.png 3x'/></td><td class='starttd righttd'>"+routeData[i].addr+"</td></tr><tr><td class='lefttd' rowspan='2'><p class='bus_line1'></p></td><td id='paddingtd' class='bordertd righttd'></td></tr><tr><td id='paddingtd' class='righttd'></td></tr>";
                    } else if(i == (routeData.length-1)){ // 마지막, 도착
-                       res+="<tr><td class='img_td lefttd'><img class='arrive_img' src='img/dimarrive.png' srcset='img/dimarrive@2x.png 2x, img/dimarrive@3x.png 3x'/></td><td class='endtd righttd'>"+routeData[i].addr+"</td></tr>"
+                       res+="<tr><td class='img_td lefttd'><img class='arrive_img' src='img/dimarrive.png' srcset='img/dimarrive@2x.png 2x, img/dimarrive@3x.png 3x'/></td><td class='endtd righttd'>"+routeData[i].addr+"</td></tr>";
                    } else {
                        if(routeData[i].poi == undefined) { //일반 버스 스탑
                            if(i==(routeData.length-3)) {//위치 4개
-                               res+="<tr><td class='img_td lefttd'><img class='busstop_img2' src='img/dimbusstop.png' srcset='img/dimbusstop@2x.png 2x, img/dimbusstop@3x.png 3x'/></td><td class='locationtd righttd'>"+routeData[i].addr+"</td></tr><tr><td class='lefttd' rowspan='2'><p class='bus_line3'></p></td><td id='paddingtd' class='bordertd righttd'></td></tr><tr><td id='flexibletd' class='righttd'></td></tr>"
+                               res+="<tr><td class='img_td lefttd'><img class='busstop_img2' src='img/dimbusstop.png' srcset='img/dimbusstop@2x.png 2x, img/dimbusstop@3x.png 3x'/></td><td class='locationtd righttd'>"+routeData[i].addr+"</td></tr><tr><td class='lefttd' rowspan='2'><p class='bus_line3'></p></td><td id='paddingtd' class='bordertd righttd'></td></tr><tr><td id='flexibletd' class='righttd'></td></tr>";
                            } else {
-                               res+="<tr><td class='img_td lefttd'><img class='busstop_img1' src='img/dimbusstop.png' srcset='img/dimbusstop@2x.png 2x, img/dimbusstop@3x.png 3x'/></td><td class='locationtd righttd'>"+routeData[i].addr+"</td></tr><tr><td class='lefttd' rowspan='2'><p class='bus_line2'></p></td><td id='paddingtd' class='bordertd righttd'></td></tr><tr><td id='paddingtd' class='righttd'></td></tr>"
+                               res+="<tr><td class='img_td lefttd'><img class='busstop_img1' src='img/dimbusstop.png' srcset='img/dimbusstop@2x.png 2x, img/dimbusstop@3x.png 3x'/></td><td class='locationtd righttd'>"+routeData[i].addr+"</td></tr><tr><td class='lefttd' rowspan='2'><p class='bus_line2'></p></td><td id='paddingtd' class='bordertd righttd'></td></tr><tr><td id='paddingtd' class='righttd'></td></tr>";
                            }
                        } else {//탑승역
-                           res+="<tr><td class='img_td lefttd'><img class='bus_img' src='img/gettingon.png' srcset='img/gettingon@2x.png 2x, img/gettingon@3x.png 3x'/></td><td class='getontd righttd'>"+routeData[i].addr+"<p class='getontime'>"+routeData[i].time+"분 승차예정</p></td></tr><tr><td class='lefttd'rowspan='2'><p class='flexible_line'></p></td><td id='flexibletd' class='bordertd righttd'></td></tr><tr><td id='paddingtd' class='righttd'></td></tr>"
+                            if(m_lflag == 'true')
+                                res+="<tr><td class='img_td lefttd'><img class='bus_img' src='img/gettingon.png' srcset='img/gettingon@2x.png 2x, img/gettingon@3x.png 3x'/></td><td class='getontd righttd'>"+routeData[i].addr+"<p class='getontime'>"+routeData[i].time+"분 승차예정</p></td></tr><tr><td class='lefttd'rowspan='2'><p class='flexible_line'></p></td><td id='flexibletd' class='bordertd righttd'></td></tr><tr><td id='paddingtd' class='righttd'></td></tr>";
+                            else
+                                res+="<tr><td class='img_td lefttd'><img class='bus_img' src='img/gettingoff.png' srcset='img/gettingoff@2x.png 2x, img/gettingoff@3x.png 3x'/></td><td class='getontd righttd'>"+routeData[i].addr+"<p class='getontime'>"+routeData[i].time+"분 승차예정</p></td></tr><tr><td class='lefttd'rowspan='2'><p class='flexible_line'></p></td><td id='flexibletd' class='bordertd righttd'></td></tr><tr><td id='paddingtd' class='righttd'></td></tr>";
+           
                        }
                    }
                    allPointTime[i] = routeData[i].time;
@@ -456,7 +481,8 @@ function getRouteMap(inventoryid) {
            
            },
            error:function(status, err) {
-                makeAlert('일정확인에 문제가 있습니다. 나중에 다시 시도해주세요.');
+//                makeAlert('일정확인에 문제가 있습니다. 나중에 다시 시도해주세요.');
+                alert('일정확인에 문제가 있습니다. 나중에 다시 시도해주세요.');
            }
            });
 
@@ -469,6 +495,8 @@ function makeSibButton() {
         $(".sidbtn").css("width", "5em");
         $(".sidbtn").css("height","5em");
         $(".sidbtn").css("font-size","1.1em");
+        $(".sidbtn").css("line-height","1.4");
+
         return;
     }
     var tempname = decodeURI(childname[1] , "UTF-8");
@@ -528,8 +556,13 @@ function beforeStart() {
     $("img.busstop_img2").attr("src", "img/dimbusstop.png");
     $("img.busstop_img2").attr("srcset", "img/dimbusstop@2x.png 2x, img/dimbusstop@3x.png");
     $("p.bus_line3").css("background-image", "url('img/dimbusline.png')");
-    $("img.bus_img").attr("src", "img/gettingon.png");
-    $("img.bus_img").attr("srcset", "img/gettingon@2x.png 2x, img/gettingon@3x.png");
+    if(m_lflag == 'true') {
+        $("img.bus_img").attr("src", "img/gettingon.png");
+        $("img.bus_img").attr("srcset", "img/gettingon@2x.png 2x, img/gettingon@3x.png");
+    } else {
+        $("img.bus_img").attr("src", "img/gettingoff.png");
+        $("img.bus_img").attr("srcset", "img/gettingoff@2x.png 2x, img/gettingoff@3x.png");
+    }
     $("p.flexible_line").css("background-image", "url('img/dimdotline.png')");
     $("img.arrive_img").attr("src", "img/dimarrive.png");
     $("img.arrive_img").attr("srcset", "img/dimarrive@2x.png 2x, img/dimarrive@3x.png");

@@ -1,6 +1,7 @@
 
 function changeStyle() {
     $(".btn").css("background-color", "#5473ff");
+    $(".btn").css("color", "#ffdc10");
     $("input").attr("placeholder", "");
     $("input").css("color", "#333333");
 }
@@ -8,7 +9,8 @@ function changeStyle() {
 function goLoginByButton() {
     var pin = $("#ex").val();
     if(pin == null || pin=="") {
-        makeAlert('유효한 pin 번호를 입력해주세요.');
+//        makeAlert('유효한 pin 번호를 입력해주세요.');
+        alert('유효한 pin 번호를 입력해주세요.');
     } else {
         var root = 0;
         goLogin($("#ex").val(), root);

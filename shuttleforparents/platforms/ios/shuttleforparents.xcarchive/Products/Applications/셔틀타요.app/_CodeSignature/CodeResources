@@ -86,11 +86,11 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		AricxfW/4thQxYNUOsddwZHPJTo=
+		Q0eHAT5SYV+7GrKKGuPJYGRuXFM=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		ws4lW7Rs1SpHntBR77Qk/9YEE+A=
+		eRIAmHHY7Ij6etmiWl4tzJVmcXI=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -98,7 +98,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		zm6ufTkBbcCMyGMEXAk4z3hDu9U=
+		i1rcpjiTOyOZAx0hBjAgG79OfKc=
 		</data>
 		<key>GoogleService-Info.plist</key>
 		<data>
@@ -106,11 +106,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		kcbrQuWlHJpOLCFA++fBnPaBc30=
+		v7qrp38U+2aZPWLe616IENqVrgQ=
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		C8XU83nesgbFh9V2Fbc+W7m/G4k=
+		kR7yAovSwWJccPH9oiniYfnTazw=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -122,7 +122,7 @@
 		</data>
 		<key>config.xml</key>
 		<data>
-		u39rl07PxnCOy2cy9W0GdRUagbA=
+		N3g8zS1EoFyZV3C3p2KHOK2TIuQ=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>www/auth.html</key>
 		<data>
-		Hd3G3go/ftNdlhFobize2OVNBWw=
+		ye8n1Lor9KhDUDzreGv9BK1fIR0=
 		</data>
 		<key>www/cordova-js-src/exec.js</key>
 		<data>
@@ -166,11 +166,11 @@
 		</data>
 		<key>www/css/tayoimgheader.css</key>
 		<data>
-		s775A+RIFbkfuh2sJDna/CWfmkg=
+		VyQk459mcj66hCT3VQeoYwtsSJM=
 		</data>
 		<key>www/css/tayonotice.css</key>
 		<data>
-		4J3vvqdUww5rlh9T4/ManYLmT1k=
+		Ia8XAHkINNhRo31w8Klwt5XzrRY=
 		</data>
 		<key>www/css/tayoprogress.css</key>
 		<data>
@@ -178,19 +178,19 @@
 		</data>
 		<key>www/css/tayoreal.css</key>
 		<data>
-		djRSMb4l3ggcQOMObh+vKRL5YGw=
+		3jHM8u2QSgle7ziLW8zcUq6SvsE=
 		</data>
 		<key>www/css/tayoschedule.css</key>
 		<data>
-		JGYOaFYTrtDLoWCqkz1Uqzf2wM8=
+		HdJzAnumnq6Gomcr4ArhBZYxBrA=
 		</data>
 		<key>www/css/tayotextheader.css</key>
 		<data>
-		jDZfU3/A9raO1y2No+HsGiyQctE=
+		M1qIHBD9ycqoTLfsCTjR3INQ7yQ=
 		</data>
 		<key>www/css/terms.css</key>
 		<data>
-		sp5tm/izwffY6/Pp84mDNft2m2g=
+		crNoatYIRkjOKErtqkA9WVIH0mk=
 		</data>
 		<key>www/img/arrive.png</key>
 		<data>
@@ -326,15 +326,15 @@
 		</data>
 		<key>www/img/coach-route.png</key>
 		<data>
-		tcDkJDquLsi2CHIzJsezYVBe4XU=
+		PJwaN0QfZKNRHAhANDR3WHyhfFM=
 		</data>
 		<key>www/img/coach-route@2x.png</key>
 		<data>
-		ss3Rep8phF7/o6TFAZzboOBm73s=
+		/0IkJOLh14c8QCWeIKAsFt1zj90=
 		</data>
 		<key>www/img/coach-route@3x.png</key>
 		<data>
-		fy9QZJedX7oQ4/STm6n5W4nWA/8=
+		L9+YMSsOXfn8m5DARcEUGLbQRg8=
 		</data>
 		<key>www/img/contents-01.png</key>
 		<data>
@@ -444,6 +444,18 @@
 		<data>
 		73kmsAUWPP5Gas/L3Jrav5ujyJ4=
 		</data>
+		<key>www/img/getoff.png</key>
+		<data>
+		+YpH3dJeCz+2vREhcplf7cgMt1s=
+		</data>
+		<key>www/img/getoff@2x.png</key>
+		<data>
+		WedG6kFN8xp/eLGQ4k+8gdlrIBM=
+		</data>
+		<key>www/img/getoff@3x.png</key>
+		<data>
+		R+QQ+2EPTLSQi1Z2WArta+TAGYk=
+		</data>
 		<key>www/img/geton.png</key>
 		<data>
 		y1W1mSVJHVyQUv51tLhkkVc7tU0=
@@ -455,6 +467,18 @@
 		<key>www/img/geton@3x.png</key>
 		<data>
 		F7JspmD5lqZ/mCFjHdPOCy4AjQ8=
+		</data>
+		<key>www/img/gettingoff.png</key>
+		<data>
+		cMWsnnsZJFslQplq0wOVou2L51c=
+		</data>
+		<key>www/img/gettingoff@2x.png</key>
+		<data>
+		5/6G9gpVm1TGs9by0QhsILBG3pk=
+		</data>
+		<key>www/img/gettingoff@3x.png</key>
+		<data>
+		HUjzhTk4/w7ev7bZjT9zZFNKdtQ=
 		</data>
 		<key>www/img/gettingon.png</key>
 		<data>
@@ -786,15 +810,15 @@
 		</data>
 		<key>www/js/auth.js</key>
 		<data>
-		+7akBWclQ8FdYCFLqumaevG/4po=
+		Fv2zAppsWzMxlwpu8/40mLsjP+c=
 		</data>
 		<key>www/js/firebase.js</key>
 		<data>
-		orjlMnHxG+k9Gh+BJQ+2gj5xPKw=
+		XhRodlhj082O4I7yQxIPQQGhDrE=
 		</data>
 		<key>www/js/index.js</key>
 		<data>
-		QBrO2q60FHksCUXZzh6OxMprUY8=
+		SvDUWT3BCa/E+d2hG9IMV3Atl5I=
 		</data>
 		<key>www/js/tayoalert.js</key>
 		<data>
@@ -802,11 +826,11 @@
 		</data>
 		<key>www/js/tayoconfig.js</key>
 		<data>
-		lGVpKKTH8uQKFivtpPHlA9ND6go=
+		xwyfXVRQXVOGTO4oKkkV58P6ss8=
 		</data>
 		<key>www/js/tayonotice.js</key>
 		<data>
-		cBfjFRoC+uwkZhrdsE5pG7vSeYg=
+		doOzdLHNPbiEr44H6khCPhKqJps=
 		</data>
 		<key>www/js/tayoprogress.js</key>
 		<data>
@@ -814,15 +838,15 @@
 		</data>
 		<key>www/js/tayoreal.js</key>
 		<data>
-		6Y+XmyJf3wxCDi+huVKSwdD9BGY=
+		d6MJ9GegJ+wkNw5AaCKg4kGJmNo=
 		</data>
 		<key>www/js/tayoschedule.js</key>
 		<data>
-		pzw0s9xAqWHCT8JN2vBQ39dKcNo=
+		7xb6ExcVWEz3BUK5T9GUAeF2rLU=
 		</data>
 		<key>www/js/terms.js</key>
 		<data>
-		lO+M+LyCgAPlRQ8m/KF8ImDwjd4=
+		8mv4pT123VIDwu1muEqj7eTxv64=
 		</data>
 		<key>www/plugins/cordova-plugin-device/www/device.js</key>
 		<data>
@@ -854,7 +878,7 @@
 		</data>
 		<key>www/tayoschedule.html</key>
 		<data>
-		xH6Pgqw4RWi8ax4WXVVAMPlWrP0=
+		vsDzNgXZagRzaLu0wCDYYlNPBes=
 		</data>
 		<key>www/terms.html</key>
 		<data>
@@ -1087,22 +1111,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			AricxfW/4thQxYNUOsddwZHPJTo=
+			Q0eHAT5SYV+7GrKKGuPJYGRuXFM=
 			</data>
 			<key>hash2</key>
 			<data>
-			QAjAHLqNz0wfF/Y7Qnm57/YVlnbXGPZKW7sb7h8yiWU=
+			f/7vzcXT4S+oeaIcqHL7pg11kXG0qp7qdCj0IPZmRWc=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ws4lW7Rs1SpHntBR77Qk/9YEE+A=
+			eRIAmHHY7Ij6etmiWl4tzJVmcXI=
 			</data>
 			<key>hash2</key>
 			<data>
-			aSp7om3y+SX/yzvTovRQR1AWxl2lTczqCXtElFSnqVc=
+			s0Ss2NhX5gKHOd3RAAFsTZy33iLAFUs2uyxOuMglgrU=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -1120,11 +1144,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zm6ufTkBbcCMyGMEXAk4z3hDu9U=
+			i1rcpjiTOyOZAx0hBjAgG79OfKc=
 			</data>
 			<key>hash2</key>
 			<data>
-			paT+0aLQi/QUU2agb45Sr3LS55ckX0PrtR/XWT5IXdY=
+			EFTUP2Dmo26MGytaMRXGXSnZMnEk7ojPKkWZwoayKFk=
 			</data>
 		</dict>
 		<key>GoogleService-Info.plist</key>
@@ -1142,11 +1166,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			C8XU83nesgbFh9V2Fbc+W7m/G4k=
+			kR7yAovSwWJccPH9oiniYfnTazw=
 			</data>
 			<key>hash2</key>
 			<data>
-			biOTTyBT5QBeEuRYwcRQp+H4PS8BVbJS2v3bLWoUOf0=
+			7gynuQo7yVjAODtHSHnzqJiqpS58o7GsNJlTG7RqUIc=
 			</data>
 		</dict>
 		<key>archived-expanded-entitlements.xcent</key>
@@ -1164,11 +1188,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			u39rl07PxnCOy2cy9W0GdRUagbA=
+			N3g8zS1EoFyZV3C3p2KHOK2TIuQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			Mopdu9WKrO9Eiq3yNLRd6BHIohW+e5NM/vEv9qamLGo=
+			6bA/Kk4JmxYN+uaqhppzQ8sUl8/j5kA2ypmZ43Wela0=
 			</data>
 		</dict>
 		<key>embedded.mobileprovision</key>
@@ -1186,11 +1210,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Hd3G3go/ftNdlhFobize2OVNBWw=
+			ye8n1Lor9KhDUDzreGv9BK1fIR0=
 			</data>
 			<key>hash2</key>
 			<data>
-			rWzYNfqJhH1mFyox9mBj6KZmIPMaXPg20Nr0GK2y+lo=
+			eJxf9vcBAXo7muZ/qU0v5aEDw8lsrf1O0F3VDtXG9X8=
 			</data>
 		</dict>
 		<key>www/cordova-js-src/exec.js</key>
@@ -1285,22 +1309,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			s775A+RIFbkfuh2sJDna/CWfmkg=
+			VyQk459mcj66hCT3VQeoYwtsSJM=
 			</data>
 			<key>hash2</key>
 			<data>
-			sAAma6CKGfDzCPD+H9mObfD54ffzw2YQvfScyt5S588=
+			coTIqx5poAxxXlj6TNz2rcSVFqCX2cSsK2PZAw3/GAM=
 			</data>
 		</dict>
 		<key>www/css/tayonotice.css</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			4J3vvqdUww5rlh9T4/ManYLmT1k=
+			Ia8XAHkINNhRo31w8Klwt5XzrRY=
 			</data>
 			<key>hash2</key>
 			<data>
-			qlImVYUDPUaq+Jbm+fqJWWGCDk7Z3ob5BRSTIPaKeUs=
+			6g5YD7I7XdvrIXkFr2sR81KfOs1Fmt03GltGYolRLXU=
 			</data>
 		</dict>
 		<key>www/css/tayoprogress.css</key>
@@ -1318,44 +1342,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			djRSMb4l3ggcQOMObh+vKRL5YGw=
+			3jHM8u2QSgle7ziLW8zcUq6SvsE=
 			</data>
 			<key>hash2</key>
 			<data>
-			C+IoTS3vUjFohePbmSyzRpcJRvE0T5/zTuDa0To9G4g=
+			6sVr29LGOEzSjwx9r37RwtPWNpRgHV5pCFwbNCanfLk=
 			</data>
 		</dict>
 		<key>www/css/tayoschedule.css</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			JGYOaFYTrtDLoWCqkz1Uqzf2wM8=
+			HdJzAnumnq6Gomcr4ArhBZYxBrA=
 			</data>
 			<key>hash2</key>
 			<data>
-			2rW/cleWpFlhsCWIeSLcE2WU4gfDQfx0m5upvk7+Mnc=
+			v7g8dHNQF4W513aDsGX7mi+vcL705BL0jszlwlRyShY=
 			</data>
 		</dict>
 		<key>www/css/tayotextheader.css</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jDZfU3/A9raO1y2No+HsGiyQctE=
+			M1qIHBD9ycqoTLfsCTjR3INQ7yQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			39EHWZjMwVwnjwYgkKyCUPr7Nk8gFAUxA+yQYPuiuKs=
+			Ui3eAkx/gaEgj4ur5ISCc24SIIKAkl/MX17Wcqmkbhs=
 			</data>
 		</dict>
 		<key>www/css/terms.css</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			sp5tm/izwffY6/Pp84mDNft2m2g=
+			crNoatYIRkjOKErtqkA9WVIH0mk=
 			</data>
 			<key>hash2</key>
 			<data>
-			uXRbe7nMNeQLykKtmYsVE0VUr8xb67om9AMAlnm9TBs=
+			XJ0Dty8bSVwcu/NlQUCN27QaGwtuKAxRPWeHv9zuuAg=
 			</data>
 		</dict>
 		<key>www/img/arrive.png</key>
@@ -1725,33 +1749,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			tcDkJDquLsi2CHIzJsezYVBe4XU=
+			PJwaN0QfZKNRHAhANDR3WHyhfFM=
 			</data>
 			<key>hash2</key>
 			<data>
-			M0vmPUGNsDezBZNihUENz0KTBvCoY7lWEg9lqBLQU70=
+			aUNHcPrUdCLVmjFoLHk0hxcx//++0EtnBxy4bZHhXv4=
 			</data>
 		</dict>
 		<key>www/img/coach-route@2x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ss3Rep8phF7/o6TFAZzboOBm73s=
+			/0IkJOLh14c8QCWeIKAsFt1zj90=
 			</data>
 			<key>hash2</key>
 			<data>
-			7SUhzM73MqQ+l9M0WVtRIkihK9wLs/jdThRJmK9M7WY=
+			yErMsBDLCUqAs0xwjJfcShX7UxdUwx4zEM41l1saCmQ=
 			</data>
 		</dict>
 		<key>www/img/coach-route@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			fy9QZJedX7oQ4/STm6n5W4nWA/8=
+			L9+YMSsOXfn8m5DARcEUGLbQRg8=
 			</data>
 			<key>hash2</key>
 			<data>
-			DRw0FZJbbftqaXlKUPEaLMsbMeqUCR4DOouE7uOScVE=
+			4Ffm4JiUkdY4Rz7lHdtLduGNCzlAUUpbz+anLaeOmAo=
 			</data>
 		</dict>
 		<key>www/img/contents-01.png</key>
@@ -2051,6 +2075,39 @@
 			qr4UFn9FsDDZTpE7l+7f/2Xp5KmuwMIp7LWM8W8ZtN8=
 			</data>
 		</dict>
+		<key>www/img/getoff.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			+YpH3dJeCz+2vREhcplf7cgMt1s=
+			</data>
+			<key>hash2</key>
+			<data>
+			VHtj3fDGsTzo7XAHeROYPunsNbxp77FwaRt/7xQUs9k=
+			</data>
+		</dict>
+		<key>www/img/getoff@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WedG6kFN8xp/eLGQ4k+8gdlrIBM=
+			</data>
+			<key>hash2</key>
+			<data>
+			LwSFh7mCL00gLA+3SaJwO5T2S+j0IvC6C9vGVaMDRmo=
+			</data>
+		</dict>
+		<key>www/img/getoff@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			R+QQ+2EPTLSQi1Z2WArta+TAGYk=
+			</data>
+			<key>hash2</key>
+			<data>
+			4N5mhb3ZPyRDWV6oIroliNTflw8PweICr5+1OBf5Rmw=
+			</data>
+		</dict>
 		<key>www/img/geton.png</key>
 		<dict>
 			<key>hash</key>
@@ -2082,6 +2139,39 @@
 			<key>hash2</key>
 			<data>
 			a/WAFwGQtZwh6+vG1YJmbjcA+o03Ri6joWh3hgEqm5I=
+			</data>
+		</dict>
+		<key>www/img/gettingoff.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			cMWsnnsZJFslQplq0wOVou2L51c=
+			</data>
+			<key>hash2</key>
+			<data>
+			xbCAVHS1N/KIRDwLX5DcA+tNaho/V0+BdCddcYUTOfk=
+			</data>
+		</dict>
+		<key>www/img/gettingoff@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			5/6G9gpVm1TGs9by0QhsILBG3pk=
+			</data>
+			<key>hash2</key>
+			<data>
+			M4Ptpyh/hETTUlg5DAajXyxkpv5GztfaaKiE6bKPAGs=
+			</data>
+		</dict>
+		<key>www/img/gettingoff@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			HUjzhTk4/w7ev7bZjT9zZFNKdtQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			uaqOhPYOBvMNqu7xW892Kgqr37Q/lkc2sfrc9lTIdVw=
 			</data>
 		</dict>
 		<key>www/img/gettingon.png</key>
@@ -2990,33 +3080,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+7akBWclQ8FdYCFLqumaevG/4po=
+			Fv2zAppsWzMxlwpu8/40mLsjP+c=
 			</data>
 			<key>hash2</key>
 			<data>
-			QyCVyBhOd/gQr2MiBEI96JmtGtxIfOeFstHmfNL19h8=
+			zacciIXfD0yrsO8ilY6h9TOvIQuJrMSue0QWCP0L+5o=
 			</data>
 		</dict>
 		<key>www/js/firebase.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			orjlMnHxG+k9Gh+BJQ+2gj5xPKw=
+			XhRodlhj082O4I7yQxIPQQGhDrE=
 			</data>
 			<key>hash2</key>
 			<data>
-			59P6QnW+zf2FkBpuULFI5f/2gcYtZpXBHDL0QTnHK+Y=
+			zJkWd+gB+rYMClSb2HLrnXOhh8xmmgchqJR7EhKUQFM=
 			</data>
 		</dict>
 		<key>www/js/index.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QBrO2q60FHksCUXZzh6OxMprUY8=
+			SvDUWT3BCa/E+d2hG9IMV3Atl5I=
 			</data>
 			<key>hash2</key>
 			<data>
-			W1UbahSpCRzRcJ31ItO7vxP8u2L/2GNCKbAcXlXYcw8=
+			+kbv7cUNNItDfxKCPAz8omp4S8Wyu5FvxMeg8OPA1Yg=
 			</data>
 		</dict>
 		<key>www/js/tayoalert.js</key>
@@ -3034,22 +3124,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lGVpKKTH8uQKFivtpPHlA9ND6go=
+			xwyfXVRQXVOGTO4oKkkV58P6ss8=
 			</data>
 			<key>hash2</key>
 			<data>
-			PB+hjAN2U74jt6oO02c0PmBFMS9uPhLqSjrJ15ADq/E=
+			2rSQdIpKfa3++c39cAiiGuMRNMzjQ6H+DN97/fsQkKE=
 			</data>
 		</dict>
 		<key>www/js/tayonotice.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cBfjFRoC+uwkZhrdsE5pG7vSeYg=
+			doOzdLHNPbiEr44H6khCPhKqJps=
 			</data>
 			<key>hash2</key>
 			<data>
-			ljGEt2ZmBPew76SrMjz3BHOvtCCHSFOOTnWUt8to0yw=
+			GpkhvY1C4bENppg+nM90RN6CJezzdqiV8qZaiLTR5eo=
 			</data>
 		</dict>
 		<key>www/js/tayoprogress.js</key>
@@ -3067,33 +3157,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6Y+XmyJf3wxCDi+huVKSwdD9BGY=
+			d6MJ9GegJ+wkNw5AaCKg4kGJmNo=
 			</data>
 			<key>hash2</key>
 			<data>
-			3m6QwwOctDPTT+p7AX+65NCf9JzuPnoqgVHIpRZm+ro=
+			tNVt3Ruo61yDL1Sy0B/9/HqL2Fl2UHmBvQQp+l4n1Qk=
 			</data>
 		</dict>
 		<key>www/js/tayoschedule.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pzw0s9xAqWHCT8JN2vBQ39dKcNo=
+			7xb6ExcVWEz3BUK5T9GUAeF2rLU=
 			</data>
 			<key>hash2</key>
 			<data>
-			bNF2GtYBrj80U5AD7s877Mu8hTk1nMQDQuGLCArBbgs=
+			hkbwP71BpOVzQZDgJyCgdCMV1ZgGI6VqMoUyIYij8ok=
 			</data>
 		</dict>
 		<key>www/js/terms.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lO+M+LyCgAPlRQ8m/KF8ImDwjd4=
+			8mv4pT123VIDwu1muEqj7eTxv64=
 			</data>
 			<key>hash2</key>
 			<data>
-			eb+bLQKe47cYdFLY86RzrkzwC0K8wkIQ4IZ8fFsDFrw=
+			3uNDcpD5TT9cXqiWuXaheTB5ryXlYzX6j7cINkVK2SM=
 			</data>
 		</dict>
 		<key>www/plugins/cordova-plugin-device/www/device.js</key>
@@ -3177,11 +3267,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xH6Pgqw4RWi8ax4WXVVAMPlWrP0=
+			vsDzNgXZagRzaLu0wCDYYlNPBes=
 			</data>
 			<key>hash2</key>
 			<data>
-			jcvKd0HqaZ98TQn6DNj4WkKoqRQldamZBnU9bpE2ios=
+			UsvCRGV7hinhgbU4Ad/oKse9PBmLgCZEu4PlWMBHKzg=
 			</data>
 		</dict>
 		<key>www/terms.html</key>

@@ -102,27 +102,6 @@ function closeModal(num) {
         $("img.modal1").css("display", "none");
         $("img.modal2").css("display", "none");
         $("div.modal").css("display", "none");
-        
-        //push 를 위해서 띄우자. android 만
-//        if(isReStart[1] == "false") {
-//            var isPush = window.localStorage.getItem("recvpush");
-//
-//            if(device.platform == "Android" && isPush == null) {
-//                $(".pushModal").show();
-//            } else if(device.platform == "iOS") {
-//                $(".pushModal").hide();
-//                window.FirebasePlugin.hasPermission(function(data){
-//                    if(data.isEnabled) {
-//                        setNoti(true);
-//                    } else {
-//                        setNoti(false);
-//                    }
-//                });
-//            } else {
-//                $(".pushModal").hide();
-//            }
-//        }
-        
     }
 }
 
@@ -278,7 +257,8 @@ function getSchedule() {
            var ret = JSON.parse(xhr.responseText);
            
                if(400 == ret.code || 401 == ret.code) {
-                    makeAlert("code : " + ret.code + "msg : " + ret.msg);
+//                    makeAlert("code : " + ret.code + "msg : " + ret.msg);
+                    alert("code : " + ret.code + "msg : " + ret.msg);
                } else {
                     g_totalSchedule[g_totalSchedule.length] = ret;
 //                    g_totalSchedule[g_totalSchedule.length] = ret.schedules;
@@ -328,7 +308,8 @@ function getSchedule() {
                     });
                }
             }, error:function(status, err) {
-                makeAlert('주간일정 가져오기를 실패하였습니다. 나중에 다시 시도해주세요.');
+//                makeAlert('주간일정 가져오기를 실패하였습니다. 나중에 다시 시도해주세요.');
+               alert('주간일정 가져오기를 실패하였습니다. 나중에 다시 시도해주세요.');
             }
         });
     }
@@ -599,17 +580,19 @@ function goRealtimeSchedule(in_day, in_selItem, in_nextItem, in_sid) {
     }
 //    alert(in_day +" : "+carnum+" : "+inventoryId +" : "+scheduleTdId+" : "+driverphone+" : "+in_sid);
 //    alert(scheduleItem.carnum+":"+scheduleItem.inventory_id+":"+scheduleItem.scheduletable_id+":"+scheduleItem.driver_telephone);
-    
+    var l_lflag = 'true';
+    if(in_selItem.lflag !== '등원')
+        l_lflag = 'false';
     if(in_day == m_today) {
         if(in_nextItem)
             window.location.href="tayoreal.html?inventoryId:"+in_selItem.inventory_id+"&scheduleTdId:"+in_selItem.scheduletable_id+"&carnum:"+in_selItem.carnum+"&istoday:"+"true"+"&personId:"+g_viewingId+"&childname:"+encodeURI(childName , "UTF-8")+"&day:"+currentSelectedDay+"&phone:"+in_selItem.driver_telephone+"&sid:"+in_sid+"&invenid2:"+in_nextItem.inventory_id+"&scheid2:"+in_nextItem.scheduletable_id+"&carnum2:"+in_nextItem.carnum+"&phone2:"+in_nextItem.driver_telephone;
         else
-            window.location.href="tayoreal.html?inventoryId:"+in_selItem.inventory_id+"&scheduleTdId:"+in_selItem.scheduletable_id+"&carnum:"+in_selItem.carnum+"&istoday:"+"true"+"&personId:"+g_viewingId+"&childname:"+encodeURI(childName , "UTF-8")+"&day:"+currentSelectedDay+"&phone:"+in_selItem.driver_telephone+"&sid:"+in_sid;
+            window.location.href="tayoreal.html?inventoryId:"+in_selItem.inventory_id+"&scheduleTdId:"+in_selItem.scheduletable_id+"&carnum:"+in_selItem.carnum+"&istoday:"+"true"+"&personId:"+g_viewingId+"&childname:"+encodeURI(childName , "UTF-8")+"&day:"+currentSelectedDay+"&phone:"+in_selItem.driver_telephone+"&sid:"+in_sid+"&lflag:"+l_lflag;
     } else {
         if(in_nextItem)
             window.location.href="tayoreal.html?inventoryId:"+in_selItem.inventory_id+"&scheduleTdId:"+in_selItem.scheduletable_id+"&carnum:"+in_selItem.carnum+"&istoday:"+"false"+"&personId:"+g_viewingId+"&childname:"+encodeURI(childName , "UTF-8")+"&day:"+currentSelectedDay+"&phone:"+in_selItem.driver_telephone+"&sid:"+in_sid+"&invenid2:"+in_nextItem.inventory_id+"&scheid2:"+in_nextItem.scheduletable_id+"&carnum2:"+in_nextItem.carnum+"&phone2:"+in_nextItem.driver_telephone;
         else
-            window.location.href="tayoreal.html?inventoryId:"+in_selItem.inventory_id+"&scheduleTdId:"+in_selItem.scheduletable_id+"&carnum:"+in_selItem.carnum+"&istoday:"+"false"+"&personId:"+g_viewingId+"&childname:"+encodeURI(childName , "UTF-8")+"&day:"+currentSelectedDay+"&phone:"+in_selItem.driver_telephone+"&sid:"+in_sid;
+            window.location.href="tayoreal.html?inventoryId:"+in_selItem.inventory_id+"&scheduleTdId:"+in_selItem.scheduletable_id+"&carnum:"+in_selItem.carnum+"&istoday:"+"false"+"&personId:"+g_viewingId+"&childname:"+encodeURI(childName , "UTF-8")+"&day:"+currentSelectedDay+"&phone:"+in_selItem.driver_telephone+"&sid:"+in_sid+"&lflag:"+l_lflag;
     }
 }
 //-------------------------------------------------------------------------
@@ -635,7 +618,8 @@ function getSchedule_experience() {
     $.ajax({url:mUrl, success:function(result, status, xhr) {
            var ret = JSON.parse(xhr.responseText);
            if(400 == ret.code || 401 == ret.code) {
-                makeAlert("code : " + ret.code + "msg : " + ret.msg);
+//                makeAlert("code : " + ret.code + "msg : " + ret.msg);
+                alert("code : " + ret.code + "msg : " + ret.msg);
            } else {
                 if (ret.schedules !== undefined) {
                     var keyLen = Object.keys(ret.schedules).length; //시간표 없는 날도 모두 받자 월~일
@@ -656,7 +640,8 @@ function getSchedule_experience() {
                 });
            }
            }, error:function(status, err) {
-                makeAlert('주간일정 가져오기를 실패하였습니다. 나중에 다시 시도해주세요.');
+//                makeAlert('주간일정 가져오기를 실패하였습니다. 나중에 다시 시도해주세요.');
+                alert('주간일정 가져오기를 실패하였습니다. 나중에 다시 시도해주세요.');
            }
     });
 }

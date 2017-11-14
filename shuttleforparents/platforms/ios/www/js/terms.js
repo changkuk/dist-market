@@ -8,14 +8,16 @@ function getClauseFromServer() {
            success:function(result, status, xhr){
            var ret = JSON.parse(xhr.responseText);
            if (ret.code == 400) {
-                makeAlert('유효하지 않은 정보로 약관페이지를 가져오는데 실패했습니다.');
+//                makeAlert('유효하지 않은 정보로 약관페이지를 가져오는데 실패했습니다.');
+                alert('유효하지 않은 정보로 약관페이지를 가져오는데 실패했습니다.');
            } else {
                 $(".content1").html(ret.memberClauses);
                 $("#term2").html(ret.personalInfoClauses);
            }
            },
            error:function(status, err) {
-                makeAlert('약관페이지를 가져오는데 실패했습니다.');
+//                makeAlert('약관페이지를 가져오는데 실패했습니다.');
+                alert('약관페이지를 가져오는데 실패했습니다.');
            }});
 }
 
@@ -43,8 +45,10 @@ function checked(caller) {
     }
     if(isChecked1 && isChecked2) {
         document.getElementById("btn").style.backgroundColor ="#5473ff";
+        $("#btn").css("color", "#ffdc10");
     } else {
         document.getElementById("btn").style.backgroundColor ="#ededed";
+        $("#btn").css("color", "#cccccc");
     }
 }
 function signHTML() {

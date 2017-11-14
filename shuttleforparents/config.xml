@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.edticket.shuttleforparents" ios-CFBundleVersion="1.0.3" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.edticket.shuttleforparents" ios-CFBundleVersion="1.0.5" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>shuttleforparents</name>
     <description>
         안전한 어린이통학 전문 서비스 셔틀타요에서 만든 학부모용 '셔틀타요 어플리케이션'입니다.
@@ -37,11 +37,11 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <preference name="StatusBarOverlaysWebView" value="false" />
-        <preference name="StatusBarBackgroundColor" value="#000000" />
+        <preference name="StatusBarBackgroundColor" value="#5473ff" />
         <preference name="StatusBarStyle" value="lightcontent" />
         <preference name="ios-statusbarstyle" value="black-opaque" />
         <preference name="target-device" value="handset" />
-        <preference name="deployment-target" value="7.0" />
+        <preference name="deployment-target" value="8.0" />
         <icon height="20" src="res/icon/ios/icon-20.png" width="20" />
         <icon height="180" src="res/icon/ios/icon-60@3x.png" width="180" />
         <icon height="60" src="res/icon/ios/icon-60.png" width="60" />

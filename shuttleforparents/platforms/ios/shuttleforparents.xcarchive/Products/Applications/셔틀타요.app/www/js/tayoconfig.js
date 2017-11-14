@@ -37,7 +37,8 @@ function setNoti() {
                                              });
     } catch(err) {
 //        progressStop();
-        makeAlert("E01.설정이 원활히 이루어지지 않았습니다.");
+//        makeAlert("E01.설정이 원활히 이루어지지 않았습니다.");
+        alert("E01.설정이 원활히 이루어지지 않았습니다.");
     }
 }
 function getNoti() {
@@ -87,11 +88,13 @@ function fcm_reg(token) {
 //               alert("SUCCESS getDeviceInfo(pin):"+lpin);
            },
            error: function() {
-               makeAlert("E02.설정이 원활히 이루어지지 않았습니다..");
+//               makeAlert("E02.설정이 원활히 이루어지지 않았습니다..");
+               alert("E02.설정이 원활히 이루어지지 않았습니다..");
            }
        });
     } catch(err) {
-        makeAlert("E03.설정이 원활히 이루어지지 않았습니다...");
+//        makeAlert("E03.설정이 원활히 이루어지지 않았습니다...");
+        alert("E03.설정이 원활히 이루어지지 않았습니다...");
     }
 //    progressStop();
 }

@@ -65,6 +65,9 @@ td.noti {
         margin-left:22.5px;
         margin-top:37.5px;
     }
+    .titletr {
+        border: solid 1.5px #ededed;
+    }
     .closure {
         width: 22.5px;
         height: 12px;
@@ -97,6 +100,9 @@ td.noti {
         font-size: 16px;
         margin-left:15px;
         margin-top:25px;
+    }
+    .titletr {
+        border: solid 1px #ededed;
     }
     .closure {
         width: 15px;
@@ -131,6 +137,10 @@ td.noti {
         margin-left:30px;
         margin-top:50px;
     }
+    .titletr {
+        border: solid 2px #ededed;
+    }
+
     .closure {
         width: 30px;
         height: 16px;

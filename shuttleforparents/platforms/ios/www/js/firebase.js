@@ -52,55 +52,86 @@ var m_pin = null;
 var m_studArray = null;
 var progressId = null;
 
+//로그인을 위해서 토큰을 가져온다.
 
 function goLogin(in_pin, in_from) {
     m_pin = in_pin;
     g_from = in_from;
-        
-//    var mURL = "http://api.edticket.com/api/getStudentInfo";
+    //    var mURL = "http://api.edticket.com/api/getStudentInfo";
     var mURL = "https://api.edticket.com/api/getStudentInfo";
-
-    $.ajax({url:mURL,
-           method: "POST",
-           data: $.param({pin_number:m_pin}),
-           success:function(result, status, xhr){
-                var ret = JSON.parse(xhr.responseText);
-                if(ret.code == 400 || ret.code == 401) {
-                    if(g_from == 1) {//시작이 main 인경우, 주간스케쥴, 근데 에러가 나면 다시 auth.html 로
-                        showPinModal();
-                        window.localStorage.clear();
+    //    mURL = "http://curtis-tayotayo.edticket.com/api/getStudentInfo"; //500에러 테스트용
+    var devToken = window.localStorage.getItem("devicetoken");
+//    alert("devToken:"+devToken);
+    if(devToken != null && devToken != undefined) {
+//        alert("토큰성공");
+        $.ajax({url:mURL,
+               method: "POST",
+               data: $.param({pin_number:m_pin, token:devToken}),
+               success:function(result, status, xhr){
+                    var ret = JSON.parse(xhr.responseText);
+                    if(ret.code == 400 || ret.code == 401) {
+                        if(g_from == 1) {//시작이 main 인경우 즉 주간스케쥴 근데 에러가 나면 다시 auth.html 로
+                            showPinModal();
+                            window.localStorage.clear();
+                        } else {
+                            alert('유효하지 않은 PIN 번호입니다.');
+                        }
                     } else {
-                        makeAlert('유효하지 않은 PIN 번호입니다.');
+                        try{
+                            m_studArray = ret.students;
+                            progressStart();
+                            if(g_from == 0)
+                                getPushToken(m_pin);
+                            else
+                                siginInFirebase(m_studArray);
+                        } catch(err) {//window.localStorage error
+                        }
                     }
-                } else {
-                    try{
-//                        m_pin = in_pin;
-                        m_studArray = ret.students;
-                        progressStart();
-                        if(g_from == 0)
-                            getPushToken(m_pin);
-                        else
-                            siginInFirebase(m_studArray);
-           
-//                        alert("START onNotificationOpen()");
-//                        window.FirebasePlugin.onNotificationOpen(function(notification) {
-//                            if(notification.body != null && notification.body != undefined)
-//                                makeAlert(notification.body);
-////                            alert("START onNotificationOpen() :: "+ notification.body+", "+notification.title+", "+notification.icon);
-//                            }, function(error) {
-//                                console.error(error);
-//                                alert("ERROR onNotificationOpen() :: " + error);
-//                            });
-
-                    } catch(err) {//window.localStorage error
+               },
+               error:function(status, err) {
+                    alert('정확한 핀번호가 아닙니다. 관리자에게 문의하세요.');
+               }
+               });
+    } else {
+//        alert("토큰실패");
+        $.ajax({url:mURL,
+               method: "POST",
+               data: $.param({pin_number:m_pin}),
+               success:function(result, status, xhr){
+                    var ret = JSON.parse(xhr.responseText);
+                    if(ret.code == 400 || ret.code == 401) {
+                        if(g_from == 1) {//시작이 main 인경우 즉 주간스케쥴 근데 에러가 나면 다시 auth.html 로
+                            showPinModal();
+                            window.localStorage.clear();
+                        } else {
+                            alert('유효하지 않은 PIN 번호입니다.');
+                        }
+                    } else {
+                        try{
+                            m_studArray = ret.students;
+                            progressStart();
+                            if(g_from == 0)
+                                getPushToken(m_pin);
+                            else
+                                siginInFirebase(m_studArray);
+    //                        alert("START onNotificationOpen()");
+    //                        window.FirebasePlugin.onNotificationOpen(function(notification) {
+    //                            if(notification.body != null && notification.body != undefined)
+    //                                makeAlert(notification.body);
+    ////                            alert("START onNotificationOpen() :: "+ notification.body+", "+notification.title+", "+notification.icon);
+    //                            }, function(error) {
+    //                                console.error(error);
+    //                                alert("ERROR onNotificationOpen() :: " + error);
+    //                            });
+                        } catch(err) {//window.localStorage error
+                        }
                     }
-           
-                }
-           },
-           error:function(status, err) {
-                makeAlert('정확한 핀번호가 아닙니다. 관리자에게 문의하세요.');
-           }
-           });
+               },
+               error:function(status, err) {
+                    alert('정확한 핀번호가 아닙니다. 관리자에게 문의하세요.');
+               }
+               });
+    }
 }
 
 var progressId = null;
@@ -132,7 +163,8 @@ function siginInFirebase(in_array) {
 //    alert("START signInAnonymously()::");
     firebase.auth().signInAnonymously().catch(function(error) {
                                         progressStop();
-                                              makeAlert('F01.인증요청이 실패했습니다. 셔틀타요에 문의하세요.');
+//                                              makeAlert('F01.인증요청이 실패했습니다. 셔틀타요에 문의하세요.');
+                                              alert('F01.인증요청이 실패했습니다. 셔틀타요에 문의하세요.');
                                           var errorCode = error.code;
                                           var errorMessage = error.message;
                                           ret_value = false;
@@ -155,7 +187,8 @@ function siginInFirebase(in_array) {
     });
     } catch(err) {
         progressStop();
-        makeAlert('F02.인증요청이 실패했습니다. 셔틀타요에 문의하세요..');
+//        makeAlert('F02.인증요청이 실패했습니다. 셔틀타요에 문의하세요..');
+        alert('F02.인증요청이 실패했습니다. 셔틀타요에 문의하세요..');
     }
 }
 
@@ -189,7 +222,8 @@ function saveFirebaseDatabase(in_array, user) {
             var errorCode = err.code;
             var errorMessage = err.message;
             progressStop();
-            makeAlert('F03.등록되지 않은 사용자입니다.');
+//            makeAlert('F03.등록되지 않은 사용자입니다.');
+            alert('F03.등록되지 않은 사용자입니다.');
             ret_value = false;
         });
     } else {
@@ -197,7 +231,8 @@ function saveFirebaseDatabase(in_array, user) {
             var errorCode = err.code;
             var errorMessage = err.message;
             progressStop();
-            makeAlert('F04.등록되지 않은 사용자입니다.');
+//            makeAlert('F04.등록되지 않은 사용자입니다.');
+            alert('F04.등록되지 않은 사용자입니다.');
             ret_value = false;
         });
     }
@@ -216,7 +251,8 @@ function saveFirebaseDatabase(in_array, user) {
                 window.localStorage.setItem("studentInfo", in_array); //null
             }
         } catch(err) { //storage err
-            makeAlert('B01.정보입력에 실패했습니다. 원활한 사용을 할 수 없습니다.');
+//            makeAlert('B01.정보입력에 실패했습니다. 원활한 사용을 할 수 없습니다.');
+            alert('B01.정보입력에 실패했습니다. 원활한 사용을 할 수 없습니다.');
         }
     }
 
@@ -291,12 +327,14 @@ function fcm_reg(isrecv, token, pin) {
                },
                error: function() {
                    progressStop();
-                   makeAlert("S01.등록에 실패했습니다. 잠시후 다시 이용해주세요.");
+//                   makeAlert("S01.등록에 실패했습니다. 잠시후 다시 이용해주세요.");
+                    alert("S01.등록에 실패했습니다. 잠시후 다시 이용해주세요.");
                }
                });
     } catch(err) {
         progressStop();
-        makeAlert("S02.등록에 실패했습니다. 셔틀타요에 문의하세요.");
+//        makeAlert("S02.등록에 실패했습니다. 셔틀타요에 문의하세요.");
+        alert("S02.등록에 실패했습니다. 셔틀타요에 문의하세요.");
     }
 }
 
@@ -324,7 +362,8 @@ function getPushToken(pin) {
         }
     }, function(error) {
         progressStop();
-        makeAlert("F05.푸쉬등록에 실패했습니다. 다시 시도해주세요.");
+//        makeAlert("F05.푸쉬등록에 실패했습니다. 다시 시도해주세요.");
+        alert("F05.푸쉬등록에 실패했습니다. 다시 시도해주세요.");
 //        alert("FirebasePlugin.getToken() :" +error);
     });
     
@@ -344,12 +383,14 @@ function getPushToken(pin) {
         }
     }, function(error) {
         progressStop();
-        makeAlert("F06.푸쉬등록에 실패했습니다. 다시 시도해주세요..");
+//        makeAlert("F06.푸쉬등록에 실패했습니다. 다시 시도해주세요..");
+        alert("F06.푸쉬등록에 실패했습니다. 다시 시도해주세요..");
 //        alert("FirebasePlugin.onTokenRefresh() :" +error);
     });
     } catch(err) {
         progressStop();
-        makeAlert("F07.푸쉬등록에 실패했습니다. 다시 시도해주세요...");
+//        makeAlert("F07.푸쉬등록에 실패했습니다. 다시 시도해주세요...");
+        alert("F07.푸쉬등록에 실패했습니다. 다시 시도해주세요...");
 //        alert("push 설정 오류");
     }
 }

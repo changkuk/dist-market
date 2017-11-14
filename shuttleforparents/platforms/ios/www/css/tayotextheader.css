@@ -9,6 +9,7 @@ body {
     background-color: #fafafa;
     margin:0px;
     padding:0px;
+    font-family: '나눔 고딕',Dotum, 'droid sans fallback','AppleGothic',sans-serif, AppleGothicNeo;
 }
 header {
     background-color: #5473ff;
