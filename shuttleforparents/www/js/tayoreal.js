@@ -159,6 +159,7 @@ function onSkipbusbtn() {
         return;
     }
     var canChange = true; //오늘인지 아닌지
+    if (0) {
     var today = new Date();
     switch(today.getDay()) {
         case 0:
@@ -189,6 +190,7 @@ function onSkipbusbtn() {
             if(curday[1] == "sat")
                 canChange = false;
             break;
+    }
     }
 
     //당일이면 변경 불가
